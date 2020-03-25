@@ -41,6 +41,8 @@ RUN apt-get update && \
 
 RUN pip3 install umap-learn
 
+ENV FOO="BAR"
+
 #RUN apt-get update && \
 #    apt-get install -y libxkbcommon-x11-0 && \
 #    wget -P /tmp/ https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.5033-amd64.deb && \
