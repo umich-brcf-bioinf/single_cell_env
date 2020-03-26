@@ -5,6 +5,8 @@ RUN Rscript -e "\
         'AnnotationDbi', \
         'AnnotationFilter', \
         'BiocGenerics', \
+        'EnsDb.Mmusculus.v79', \
+        'EnsDb.Hsapiens.v75', \
         'GenomeInfoDb', \
         'GenomicFeatures', \
         'GenomicRanges', \
@@ -21,6 +23,8 @@ RUN Rscript -e "\
     install.packages(c(\  
         'cowplot', \
         'dplyr', \
+        'ggplot2',\
+        'patchwork',\
         'reticulate', \
         'Seurat', \
         'Signac', \
@@ -40,8 +44,6 @@ RUN apt-get update && \
     apt-get install -y python3-pip
 
 RUN pip3 install umap-learn
-
-ENV FOO="BAR"
 
 #RUN apt-get update && \
 #    apt-get install -y libxkbcommon-x11-0 && \
