@@ -24,6 +24,7 @@ RUN Rscript -e "\
         'cowplot', \
         'dplyr', \
         'ggplot2',\
+        'hdf5r',\
         'patchwork',\
         'reticulate', \
         'Seurat', \
