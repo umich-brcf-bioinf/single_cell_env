@@ -17,7 +17,7 @@ On comp5, start a screen session for persistence, and execute rserver from the s
     module load singularity/3.5.2
     singularity exec docker://umichbfxcore/single_cell:0.1.2 rserver
 
-Now rstudio is running on comp5/6 localhost, port 8787 (defaults)
+Now rstudio is running on comp5 localhost, port 8787 (defaults)
 
 The next step is to create a port-forwarding ssh tunnel. I'll do this from my MacBook (note I have an alias set up, `bfx-comp5` maps to `bfx-comp5.med.umich.edu`). 
 
