@@ -30,7 +30,7 @@ This creates a secure connection to 'bind' the port running rserver on comp5/6 t
 This connection will run in the foreground, and so will occupy the terminal. This allows simpler detection of dropped connections, since errors would show up here. It's also possible to run this in the background if desired, by adding the `-f` flag to the `ssh` command.
 </details>
 
-Now from your macbook, you can access the rstudio session running on comp5/6. In your web browser, type:  
+Now from your macbook, you can access the rstudio session running on comp5. In your web browser, type:  
 
     localhost:8787  
   
