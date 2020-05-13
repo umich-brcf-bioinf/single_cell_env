@@ -31,6 +31,18 @@ RUN Rscript -e "\
         'Signac', \
         'tidyverse'));"
 
+RUN Rscript -e "\
+    BiocManager::install(c( \
+        'DelayedArray', \
+        'DelayedMatrixStats', \
+        'limma', \
+        'SingleCellExperiment', \
+        'SummarizedExperiment', \
+        'batchelor', \
+        'Matrix.utils')); \
+    library(devtools); \
+    devtools::install_github('cole-trapnell-lab/monocle3');"
+
 RUN wget -P /tmp https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.2-Linux-x86_64.sh && \
     sha256sum /tmp/Miniconda3-py37_4.8.2-Linux-x86_64.sh && \
     bash /tmp/Miniconda3-py37_4.8.2-Linux-x86_64.sh -p /miniconda -b && \
