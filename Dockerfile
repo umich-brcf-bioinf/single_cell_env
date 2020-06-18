@@ -1,4 +1,4 @@
-FROM bioconductor/bioconductor_docker:RELEASE_3_10
+FROM bioconductor/bioconductor_docker:RELEASE_3_11
 
 RUN Rscript -e "\
     BiocManager::install(c(\
@@ -58,9 +58,8 @@ RUN apt-get update && \
 
 RUN pip3 install umap-learn
 
-#RUN apt-get update && \
-#    apt-get install -y libxkbcommon-x11-0 && \
-#    wget -P /tmp/ https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.5033-amd64.deb && \
-#    dpkg -i /tmp/rstudio-1.2.5033-amd64.deb
-#
+RUN apt-get update && \
+    apt-get install -y libxkbcommon-x11-0 && \
+    wget -P /tmp/ https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.5033-amd64.deb && \
+    dpkg -i /tmp/rstudio-1.2.5033-amd64.deb
 
