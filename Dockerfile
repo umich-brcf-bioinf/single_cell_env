@@ -43,6 +43,8 @@ RUN Rscript -e "\
     library(devtools); \
     devtools::install_github('cole-trapnell-lab/monocle3');"
 
+RUN Rscript -e "install.packages('metap')"
+
 RUN wget -P /tmp https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.2-Linux-x86_64.sh && \
     sha256sum /tmp/Miniconda3-py37_4.8.2-Linux-x86_64.sh && \
     bash /tmp/Miniconda3-py37_4.8.2-Linux-x86_64.sh -p /miniconda -b && \
@@ -53,10 +55,9 @@ ENV PATH=/miniconda/bin:${PATH}
 RUN mkdir -p /root/.local/share && \
     echo "/miniconda/bin/conda" > /root/.local/share/r-miniconda
 
-RUN apt-get update && \
-    apt-get install -y python3-pip
-
-RUN pip3 install umap-learn
+RUN Rscript -e "\
+    library(reticulate); \
+    conda_install(env_name='umap-learn', packages='umap-learn');"
 
 RUN apt-get update && \
     apt-get install -y libxkbcommon-x11-0 && \
