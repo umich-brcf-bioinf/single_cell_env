@@ -20,7 +20,7 @@ If your remote machine is set up to run a remote desktop, this may be a fast and
 
 1. Connect to the remote desktop.
 
-    If using Microsoft Remote Desktop on bfx-comp5 or bfx-comp6, you can [follow the instructions here](https://3.basecamp.com/3850040/buckets/6149755/google_documents/2638030126). There are many software solutions for remote desktop solutions. The important part is the ability to use a graphical desktop (to run RStudio).
+    If using Microsoft Remote Desktop on bfx-comp5 or bfx-comp6, you can [follow the instructions here](https://3.basecamp.com/3850040/buckets/6149755/google_documents/2638030126). There are many software solutions for remote desktops. The important part is the ability to use a graphical desktop (to run RStudio).
 
 2. On the remote desktop, open a terminal window and launch Rstudio from the singularity container:
     ```
@@ -28,7 +28,7 @@ If your remote machine is set up to run a remote desktop, this may be a fast and
     module load singularity
     singularity exec docker://umichbfxcore/single_cell:0.3.1 rstudio
     ```
-    Note that singularity binds your current working directory by default, so by changing to your project directory above before calling singularity, the project directory will be mounted.
+    Note that singularity binds your current working directory by default, so by changing to your project directory before calling singularity as above, the project directory will be mounted in this manner.
 
     You may see a message `XDG_RUNTIME_DIR points to non-existing path '/run/user/your-user-id`. I believe this is harmless, but it's possible to prevent it by binding that directory to the singularity container:
     ```
