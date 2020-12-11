@@ -64,4 +64,10 @@ RUN apt-get update && \
     wget -P /tmp/ https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.5033-amd64.deb && \
     dpkg -i /tmp/rstudio-1.2.5033-amd64.deb
 
-RUN pip install scanpy loompy
+RUN pip install scanpy loompy scvelo
+
+RUN apt-get install -y libboost-all-dev && \
+    Rscript -e "\
+        BiocManager::install('pcaMethods'); \
+        library(devtools); \
+        install_github('velocyto-team/velocyto.R');"
