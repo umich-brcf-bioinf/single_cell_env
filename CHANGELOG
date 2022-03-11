@@ -1,0 +1,55 @@
+# Changelog
+
+0.7.0 (03/04/2022)
+------------------
+- Updated to Bioconductor 3.14
+- Updated Seurat to 4.1.0 
+  - Fix for issue when using FindMarkers with MAST
+
+0.6.0 (Sept/Oct 2021)
+---------------------
+- Weisheng upgraded Seurat to 4.0.4
+  - He's placed that version of the Dockerfile [here]() (it's not in the commit history)
+
+0.5.0 - (12/11/2020)
+--------------------
+- Added scvelo python package
+- Added velocyto.R
+
+0.4.0 - (12/07/2020)
+--------------------
+- Added scanpy / loompy python packages
+- Upgraded Bioconductor to 3.12
+
+0.3.1 - (10/01/2020)
+--------------------
+- Added metap R package
+- Used reticulate::conda_install for umap-learn
+- Updated documentation
+
+0.3.0 - (06/18/2020)
+--------------------
+- Upgraded Bioconductor to 3.11
+- Added RStudio desktop to image
+
+0.2.0 - (05/13/2020)
+--------------------
+- Added Monocle3
+
+0.1.2 - (04/15/2020)
+--------------------
+- Added R packages for scATAC
+  - hdf5r
+  - ggplot2
+  - patchwork
+- Updated documentation
+
+0.1.1 - (03/25/2020)
+--------------------
+- Commit/tag used as autobuild trigger - ignore
+
+0.1.0 - (03/25/2020)
+--------------------
+- First commit
+  - Dockerfile
+  - README.md

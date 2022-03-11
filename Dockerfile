@@ -1,4 +1,4 @@
-FROM bioconductor/bioconductor_docker:RELEASE_3_12
+FROM bioconductor/bioconductor_docker:RELEASE_3_14
 
 RUN Rscript -e "\
     BiocManager::install(c(\
