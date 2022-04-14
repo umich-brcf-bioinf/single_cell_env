@@ -71,3 +71,17 @@ RUN apt-get install -y libboost-all-dev && \
         BiocManager::install('pcaMethods'); \
         library(devtools); \
         install_github('velocyto-team/velocyto.R');"
+
+RUN Rscript -e "\
+    BiocManager::install(c(\
+        'DESeq2')); \
+    install.packages(c(\  
+        'bookdown', \
+        'ComplexUpset', \
+        'ggrepel', \
+        'Hmisc', \
+        'locfit', \
+        'kableExtra', \
+        'plotly', \
+        'systemfonts', \
+        'xfun'));"
