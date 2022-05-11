@@ -61,8 +61,8 @@ RUN Rscript -e "\
 
 RUN apt-get update && \
     apt-get install -y libxkbcommon-x11-0 && \
-    wget -P /tmp/ https://download1.rstudio.org/desktop/bionic/amd64/rstudio-2022.02.0-443-amd64.deb && \
-    dpkg -i /tmp/rstudio-2022.02.0-443-amd64.deb
+    wget -P /tmp/ https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.5033-amd64.deb && \
+    dpkg -i /tmp/rstudio-1.2.5033-amd64.deb
 
 RUN pip install scanpy loompy scvelo
 
@@ -73,17 +73,9 @@ RUN apt-get install -y libboost-all-dev && \
         install_github('velocyto-team/velocyto.R');"
 
 RUN Rscript -e "\
-        library(devtools); \
-        install_github('ZJUFanLab/scCATCH');"
+    BiocManager::install(c( \
+        'glmGamPoi', 'DESeq2', 'scran')); \
+    library(devtools); \
+    devtools::install_github('satijalab/sctransform', ref = 'develop');"
 
-RUN Rscript -e "\
-    BiocManager::install(c(\
-        'DESeq2')); \
-    install.packages(c(\  
-        'bookdown', \
-        'ComplexUpset', \
-        'ggrepel', \
-        'Hmisc', \
-        'locfit', \
-        'kableExtra', \
-        'plotly'));"
+
