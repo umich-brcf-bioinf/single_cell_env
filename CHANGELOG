@@ -1,5 +1,12 @@
 # Changelog
 
+0.9.0 (05/20/2022)
+------------------
+- Update Bioconductor to 3.15
+- Update Seurat to 4.1.1
+  - includes `sp` - provides classes and methods for spatial data
+  - includes sctransform v2
+
 0.8.0 (04/22/2022)
 ------------------
 - Added scCATCH package - "Automatic annotation on cell types of clusters"
@@ -15,7 +22,7 @@
 0.6.0 (Sept/Oct 2021)
 ---------------------
 - Weisheng upgraded Seurat to 4.0.4
-  - He's placed that version of the Dockerfile [here]() (it's not in the commit history)
+  - We've placed that version of the Dockerfile [here](https://gist.github.com/twsaari/36945dc2ca2f5c75263dccb5ef5c5035) (it's not in the commit history)
 
 0.5.0 - (12/11/2020)
 --------------------

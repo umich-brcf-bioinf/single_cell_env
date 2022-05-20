@@ -1,4 +1,4 @@
-FROM bioconductor/bioconductor_docker:RELEASE_3_14
+FROM bioconductor/bioconductor_docker:RELEASE_3_15
 
 RUN Rscript -e "\
     BiocManager::install(c(\
@@ -11,6 +11,7 @@ RUN Rscript -e "\
         'GenomicFeatures', \
         'GenomicRanges', \
         'ggbio', \
+        'glmGamPoi', \
         'IRanges', \
         'MAST', \
         'monocle', \
