@@ -78,7 +78,7 @@ RUN Rscript -e "\
 
 RUN Rscript -e "\
     BiocManager::install(c(\
-        'DESeq2')); \
+        'DESeq2', 'glmGamPoi', 'scran')); \
     install.packages(c(\  
         'bookdown', \
         'ComplexUpset', \
