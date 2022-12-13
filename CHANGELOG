@@ -5,6 +5,7 @@
 - Update Bioconductor to 3.16
 - Update conda, python to 3.9
 - Update RStudio to latest (compatible with "Jammy Jellyfish" base image)
+- Removed `umap-learn` python package (no longer needed?)
 - Added `celda` (decontX) and `SoupX` R packages
 
 0.9.0 (05/20/2022)
