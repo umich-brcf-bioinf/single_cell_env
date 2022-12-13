@@ -1,5 +1,12 @@
 # Changelog
 
+0.10.0 (12/13/2022)
+-------------------
+- Update Bioconductor to 3.16
+- Update conda, python to 3.9
+- Update RStudio to latest (compatible with "Jammy Jellyfish" base image)
+- Added `celda` (decontX) and `SoupX` R packages
+
 0.9.0 (05/20/2022)
 ------------------
 - Update Bioconductor to 3.15

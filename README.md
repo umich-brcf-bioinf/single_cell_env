@@ -8,7 +8,7 @@
 
 ## About
 
-This single-cell environment is built on the Bioconductor 3.14 base image, with libraries such as Seurat 3, Monocle3, Signac, Tidyverse available.
+This single-cell environment is built on the Bioconductor 3.16 base image, with libraries such as Seurat 3, Monocle3, Signac, Tidyverse available.
 
 This environment is provided as a Docker image, and this GitHub repository is connected to DockerHub, where [the Docker image is hosted](https://hub.docker.com/r/umichbfxcore/single_cell). A containerized environment provides each user with the same software and setup, ensuring reproducibility across users and over time.
 
@@ -26,13 +26,13 @@ If your remote machine is set up to run a remote desktop, this may be a fast and
     ```
     cd /path/to/project_dir
     module load singularity
-    singularity exec docker://umichbfxcore/single_cell_env:0.9.0 rstudio
+    singularity exec docker://umichbfxcore/single_cell_env:0.10.0 rstudio
     ```
     Note that singularity binds your current working directory by default, so by changing to your project directory before calling singularity as above, the project directory will be mounted in this manner.
 
     You may see a message `XDG_RUNTIME_DIR points to non-existing path '/run/user/your-user-id`. I believe this is harmless, but it's possible to prevent it by binding that directory to the singularity container:
     ```
-    singularity exec -B /run/user/your-user-id docker://umichbfxcore/single_cell_env:0.9.0 rstudio
+    singularity exec -B /run/user/your-user-id docker://umichbfxcore/single_cell_env:0.10.0 rstudio
     ```
 
 3. Once RStudio has started, proceed with analysis as planned. The Seurat, monocle, etc. libraries installed in the container are available for use.
@@ -53,7 +53,7 @@ This example will walk-through running the container on the remote machine `bfx-
     # On the remote machine
     screen -S single_cell
     module load singularity
-    singularity exec docker://umichbfxcore/single_cell_env:0.9.0 rserver
+    singularity exec docker://umichbfxcore/single_cell_env:0.10.0 rserver
     ```
 
     Now rstudio is running on comp5 localhost, port 8787 (defaults)
@@ -99,7 +99,7 @@ If while running the `singularity exec ... rserver` command, you encounter an er
 
 This means that the port that rserver wants to use (default 8787), is already occupied on that machine. To choose a different port, supply the `--www-port` argument to `rserver`, e.g.:
 
-    singularity exec docker://umichbfxcore/single_cell_env:0.9.0 rserver --www-port 8777
+    singularity exec docker://umichbfxcore/single_cell_env:0.10.0 rserver --www-port 8777
 
 You'll then set up the ssh tunnel to bind to that port e.g.
 
@@ -116,4 +116,4 @@ If while running the `singularity exec ... rserver` command, you encounter an er
 
 This usually indicates that another user has a secure-cookie-key file in that `/tmp/rstudio-server` location on the remote machine. To choose a different location to create a `secret-cookie-key` file, supply the `--secure-cookie-key-file` argument to `rserver`, e.g.:
 
-    singularity exec docker://umichbfxcore/single_cell_env:0.9.0 rserver --secure-cookie-key-file ~/secure-cookey-key-123
+    singularity exec docker://umichbfxcore/single_cell_env:0.10.0 rserver --secure-cookie-key-file ~/secure-cookey-key-123

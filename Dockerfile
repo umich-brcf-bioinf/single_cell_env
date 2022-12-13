@@ -1,4 +1,4 @@
-FROM bioconductor/bioconductor_docker:RELEASE_3_15
+FROM bioconductor/bioconductor_docker:RELEASE_3_16
 
 RUN Rscript -e "\
     BiocManager::install(c(\
@@ -46,24 +46,20 @@ RUN Rscript -e "\
 
 RUN Rscript -e "install.packages('metap')"
 
-RUN wget -P /tmp https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.2-Linux-x86_64.sh && \
-    sha256sum /tmp/Miniconda3-py37_4.8.2-Linux-x86_64.sh && \
-    bash /tmp/Miniconda3-py37_4.8.2-Linux-x86_64.sh -p /miniconda -b && \
-    rm /tmp/Miniconda3-py37_4.8.2-Linux-x86_64.sh
+RUN wget -P /tmp https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh && \
+    sha256sum /tmp/Miniconda3-py39_4.12.0-Linux-x86_64.sh && \
+    bash /tmp/Miniconda3-py39_4.12.0-Linux-x86_64.sh -p /miniconda -b && \
+    rm /tmp/Miniconda3-py39_4.12.0-Linux-x86_64.sh
 
 ENV PATH=/miniconda/bin:${PATH}
 
 RUN mkdir -p /root/.local/share && \
     echo "/miniconda/bin/conda" > /root/.local/share/r-miniconda
 
-RUN Rscript -e "\
-    library(reticulate); \
-    conda_install(env_name='umap-learn', packages='umap-learn');"
-
 RUN apt-get update && \
     apt-get install -y libxkbcommon-x11-0 && \
-    wget -P /tmp/ https://download1.rstudio.org/desktop/bionic/amd64/rstudio-2022.02.0-443-amd64.deb && \
-    dpkg -i /tmp/rstudio-2022.02.0-443-amd64.deb
+    wget -P /tmp/ https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.07.2-576-amd64.deb && \
+    dpkg -i /tmp/rstudio-2022.07.2-576-amd64.deb
 
 RUN pip install scanpy loompy scvelo
 
@@ -88,3 +84,9 @@ RUN Rscript -e "\
         'locfit', \
         'kableExtra', \
         'plotly'));"
+
+RUN Rscript -e "\
+    BiocManager::install(c(\
+        'celda')); \
+    install.packages(c(\
+        'SoupX'));"
