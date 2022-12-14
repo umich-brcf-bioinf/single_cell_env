@@ -1,5 +1,9 @@
 # Changelog
 
+0.10.1 (12/14/2022)
+-------------------
+- Fixed font issues in RStudio
+
 0.10.0 (12/13/2022)
 -------------------
 - Update Bioconductor to 3.16
