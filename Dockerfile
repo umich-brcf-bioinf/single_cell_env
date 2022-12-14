@@ -57,7 +57,7 @@ RUN mkdir -p /root/.local/share && \
     echo "/miniconda/bin/conda" > /root/.local/share/r-miniconda
 
 RUN apt-get update && \
-    apt-get install -y fonts-dejavu libxkbcommon-x11-0 && \
+    apt-get install -y libxkbcommon-x11-0 && \
     wget -P /tmp/ https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.07.2-576-amd64.deb && \
     dpkg -i /tmp/rstudio-2022.07.2-576-amd64.deb
 
@@ -75,7 +75,7 @@ RUN Rscript -e "\
 
 RUN Rscript -e "\
     BiocManager::install(c(\
-        'DESeq2')); \
+        'DESeq2','scran')); \
     install.packages(c(\  
         'bookdown', \
         'ComplexUpset', \
@@ -83,7 +83,8 @@ RUN Rscript -e "\
         'Hmisc', \
         'locfit', \
         'kableExtra', \
-        'plotly'));"
+        'plotly', \
+        'dsb'));"
 
 RUN Rscript -e "\
     BiocManager::install(c(\
