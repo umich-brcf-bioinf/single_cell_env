@@ -107,6 +107,7 @@ RUN Rscript -e "\
 
 RUN Rscript -e "\
     library(devtools); \
-    devtools::install_github(c('aertslab/SCopeLoomR', \
-    'aertslab/SCENIC', \
-    'velocyto-team/velocyto.R'), build_vignettes = TRUE);"
+    devtools::install_github('aertslab/SCopeLoomR', build_vignettes = TRUE); \
+    devtools::install_github(c('aertslab/SCENIC', \
+    'velocyto-team/velocyto.R'));"
+
