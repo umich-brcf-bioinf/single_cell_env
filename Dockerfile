@@ -101,8 +101,7 @@ RUN Rscript -e "\
         'Rtsne', \
         'doMC', \
         'doRNG', \
-        'destiny', \
-        )); \
+        'destiny')); \
     install.packages(c(\
         'SoupX'));"
 
