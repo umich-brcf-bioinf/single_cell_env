@@ -40,12 +40,7 @@ RUN Rscript -e "\
         'SingleCellExperiment', \
         'SummarizedExperiment', \
         'batchelor', \
-        'Matrix.utils')); \
-    library(devtools); \
-    devtools::install_github('cole-trapnell-lab/monocle3', \
-    'aertslab/SCopeLoomR', \
-    'aertslab/SCENIC', \
-    'velocyto-team/velocyto.R', build_vignettes = TRUE);"
+        'Matrix.utils'));"
 
 RUN Rscript -e "install.packages('metap')"
 
@@ -110,3 +105,10 @@ RUN Rscript -e "\
         )); \
     install.packages(c(\
         'SoupX'));"
+
+RUN Rscript -e "\
+    library(devtools); \
+    devtools::install_github('cole-trapnell-lab/monocle3', \
+    'aertslab/SCopeLoomR', \
+    'aertslab/SCENIC', \
+    'velocyto-team/velocyto.R', build_vignettes = TRUE);"
