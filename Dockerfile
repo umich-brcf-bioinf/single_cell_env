@@ -42,7 +42,10 @@ RUN Rscript -e "\
         'batchelor', \
         'Matrix.utils')); \
     library(devtools); \
-    devtools::install_github('cole-trapnell-lab/monocle3');"
+    devtools::install_github('cole-trapnell-lab/monocle3', \
+    'aertslab/SCopeLoomR', \
+    'aertslab/SCENIC', \
+    'velocyto-team/velocyto.R', build_vignettes = TRUE);"
 
 RUN Rscript -e "install.packages('metap')"
 
@@ -57,7 +60,7 @@ RUN mkdir -p /root/.local/share && \
     echo "/miniconda/bin/conda" > /root/.local/share/r-miniconda
 
 RUN apt-get update && \
-    apt-get install -y fonts-dejavu libxkbcommon-x11-0 && \
+    apt-get install -y libxkbcommon-x11-0 && \
     wget -P /tmp/ https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.07.2-576-amd64.deb && \
     dpkg -i /tmp/rstudio-2022.07.2-576-amd64.deb
 
@@ -75,7 +78,7 @@ RUN Rscript -e "\
 
 RUN Rscript -e "\
     BiocManager::install(c(\
-        'DESeq2')); \
+        'DESeq2','scran')); \
     install.packages(c(\  
         'bookdown', \
         'ComplexUpset', \
@@ -83,10 +86,27 @@ RUN Rscript -e "\
         'Hmisc', \
         'locfit', \
         'kableExtra', \
-        'plotly'));"
+        'plotly', \
+        'RCurl', \
+        'dsb'));"
 
 RUN Rscript -e "\
     BiocManager::install(c(\
-        'celda')); \
+        'celda', \
+        'AUCell', 
+        'RcisTarget' \
+        'GENIE3', \
+        'zoo', \
+        'mixtools', \
+        'rbokeh', \
+        'DT', \
+        'NMF', \
+        'ComplexHeatmap', \
+        'R2HTML', \
+        'Rtsne', \
+        'doMC', \
+        'doRNG', \
+        'destiny', \
+        )); \
     install.packages(c(\
         'SoupX'));"
