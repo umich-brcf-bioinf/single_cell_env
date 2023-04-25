@@ -88,8 +88,8 @@ RUN Rscript -e "\
 RUN Rscript -e "\
     BiocManager::install(c(\
         'celda', \
-        'AUCell', 
-        'RcisTarget' \
+        'AUCell', \
+        'RcisTarget', \
         'GENIE3', \
         'zoo', \
         'mixtools', \
