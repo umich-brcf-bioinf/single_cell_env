@@ -107,7 +107,7 @@ RUN Rscript -e "\
 
 RUN Rscript -e "\
     library(devtools); \
-    devtools::install_github('cole-trapnell-lab/monocle3', \
+    devtools::install_github(c('cole-trapnell-lab/monocle3', \
     'aertslab/SCopeLoomR', \
     'aertslab/SCENIC', \
-    'velocyto-team/velocyto.R', build_vignettes = TRUE);"
+    'velocyto-team/velocyto.R'), build_vignettes = TRUE);"
