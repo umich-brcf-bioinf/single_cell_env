@@ -56,6 +56,7 @@ RUN mkdir -p /root/.local/share && \
 
 RUN apt-get update && \
     apt-get install -y libxkbcommon-x11-0 && \
+    apt-get install -y fonts-dejavu && \
     wget -P /tmp/ https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.07.2-576-amd64.deb && \
     dpkg -i /tmp/rstudio-2022.07.2-576-amd64.deb
 
