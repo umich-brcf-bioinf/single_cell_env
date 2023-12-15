@@ -1,10 +1,32 @@
-FROM bioconductor/bioconductor_docker:RELEASE_3_16
+FROM bioconductor/bioconductor_docker:RELEASE_3_18
 
 RUN Rscript -e "\
+    install.packages(c(\
+        'bookdown', \
+        'ComplexUpset', \
+        'cowplot', \
+        'dplyr', \
+        'ggplot2', \
+        'ggrepel', \
+        'hdf5r', \
+        'Hmisc', \
+        'kableExtra', \
+        'locfit', \
+        'metap', \
+        'patchwork', \
+        'plotly', \
+        'reticulate', \
+        'Seurat', \
+        'Signac', \
+        'tidyverse')); \
     BiocManager::install(c(\
         'AnnotationDbi', \
         'AnnotationFilter', \
+        'batchelor', \
         'BiocGenerics', \
+        'DelayedArray', \
+        'DelayedMatrixStats', \
+        'DESeq2', \
         'EnsDb.Mmusculus.v79', \
         'EnsDb.Hsapiens.v75', \
         'GenomeInfoDb', \
@@ -13,43 +35,21 @@ RUN Rscript -e "\
         'ggbio', \
         'glmGamPoi', \
         'IRanges', \
+        'limma', \
         'MAST', \
+        'Matrix.utils', \
         'monocle', \
         'motifmatchr', \
         'multtest', \
         'Rsamtools', \
         'S4Vectors', \
-        'ggbio', \
-        'motifmatchr')); \
-    install.packages(c(\  
-        'cowplot', \
-        'dplyr', \
-        'ggplot2',\
-        'hdf5r',\
-        'patchwork',\
-        'reticulate', \
-        'Seurat', \
-        'Signac', \
-        'tidyverse'));"
-
-RUN Rscript -e "\
-    BiocManager::install(c( \
-        'DelayedArray', \
-        'DelayedMatrixStats', \
-        'limma', \
         'SingleCellExperiment', \
-        'SummarizedExperiment', \
-        'batchelor', \
-        'Matrix.utils')); \
-    library(devtools); \
-    devtools::install_github('cole-trapnell-lab/monocle3');"
+        'SummarizedExperiment'));"
 
-RUN Rscript -e "install.packages('metap')"
-
-RUN wget -P /tmp https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh && \
-    sha256sum /tmp/Miniconda3-py39_4.12.0-Linux-x86_64.sh && \
-    bash /tmp/Miniconda3-py39_4.12.0-Linux-x86_64.sh -p /miniconda -b && \
-    rm /tmp/Miniconda3-py39_4.12.0-Linux-x86_64.sh
+RUN wget -P /tmp https://repo.anaconda.com/miniconda/Miniconda3-py311_23.10.0-1-Linux-x86_64.sh && \
+    sha256sum /tmp/Miniconda3-py311_23.10.0-1-Linux-x86_64.sh && \
+    bash /tmp/Miniconda3-py311_23.10.0-1-Linux-x86_64.sh -p /miniconda -b && \
+    rm /tmp/Miniconda3-py311_23.10.0-1-Linux-x86_64.sh
 
 ENV PATH=/miniconda/bin:${PATH}
 
@@ -75,18 +75,11 @@ RUN Rscript -e "\
 
 RUN Rscript -e "\
     BiocManager::install(c(\
-        'DESeq2')); \
-    install.packages(c(\  
-        'bookdown', \
-        'ComplexUpset', \
-        'ggrepel', \
-        'Hmisc', \
-        'locfit', \
-        'kableExtra', \
-        'plotly'));"
-
-RUN Rscript -e "\
-    BiocManager::install(c(\
         'celda')); \
     install.packages(c(\
         'SoupX'));"
+
+RUN Rscript -e "\
+        library(devtools); \
+        install_github('bnprks/BPCells'); \
+        install_github('immunogenomics/presto');"
