@@ -1,4 +1,4 @@
-FROM bioconductor/bioconductor_docker:RELEASE_3_18
+FROM bioconductor/bioconductor_docker:RELEASE_3_18-R-4.3.2
 
 RUN Rscript -e "\
     install.packages(c(\
@@ -16,7 +16,6 @@ RUN Rscript -e "\
         'patchwork', \
         'plotly', \
         'reticulate', \
-        'Seurat', \
         'Signac', \
         'tidyverse')); \
     BiocManager::install(c(\
@@ -37,6 +36,7 @@ RUN Rscript -e "\
         'IRanges', \
         'limma', \
         'MAST', \
+        'Matrix', \
         'Matrix.utils', \
         'monocle', \
         'motifmatchr', \
@@ -45,6 +45,11 @@ RUN Rscript -e "\
         'S4Vectors', \
         'SingleCellExperiment', \
         'SummarizedExperiment'));"
+
+RUN Rscript -e "\
+    library(devtools); \
+    devtools::install_github('mojaveazure/seurat-object@v5.0.1'); \
+    devtools::install_github('satijalab/seurat@v5.0.1');"
 
 RUN wget -P /tmp https://repo.anaconda.com/miniconda/Miniconda3-py311_23.10.0-1-Linux-x86_64.sh && \
     sha256sum /tmp/Miniconda3-py311_23.10.0-1-Linux-x86_64.sh && \
@@ -83,3 +88,5 @@ RUN Rscript -e "\
         library(devtools); \
         install_github('bnprks/BPCells'); \
         install_github('immunogenomics/presto');"
+
+RUN rm -r /tmp/Rtmp* /tmp/rstudio-2022.07.2-576-amd64.deb
