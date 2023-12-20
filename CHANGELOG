@@ -1,5 +1,14 @@
 # Changelog
 
+0.11.0 (12/20/2022)
+-------------------
+- Update base image to Bioconductor 3.18 with R 4.3.2
+- Update Seurat to v5
+- include BPCells and presto for Seurat5 performance improvements
+- Consolidate R dependency installations
+- Remove Monocle3
+- tmp cleanup to reduce image size
+
 0.10.1 (12/14/2022)
 -------------------
 - Fixed font issues in RStudio
