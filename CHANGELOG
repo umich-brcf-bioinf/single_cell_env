@@ -1,5 +1,11 @@
 # Changelog
 
+0.11.1 (02/12/2022)
+-------------------
+- Add Azimuth R library for use with Seurat5
+- Use newer rstudio
+- Clean cache in pip layer to reduce image size
+
 0.11.0 (12/20/2022)
 -------------------
 - Update base image to Bioconductor 3.18 with R 4.3.2
