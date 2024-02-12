@@ -49,7 +49,8 @@ RUN Rscript -e "\
 RUN Rscript -e "\
     library(devtools); \
     devtools::install_github('mojaveazure/seurat-object@v5.0.1'); \
-    devtools::install_github('satijalab/seurat@v5.0.1');"
+    devtools::install_github('satijalab/seurat@v5.0.1'); \
+    devtools::install_github('satijalab/azimuth');"
 
 RUN wget -P /tmp https://repo.anaconda.com/miniconda/Miniconda3-py311_23.10.0-1-Linux-x86_64.sh && \
     sha256sum /tmp/Miniconda3-py311_23.10.0-1-Linux-x86_64.sh && \
@@ -62,11 +63,12 @@ RUN mkdir -p /root/.local/share && \
     echo "/miniconda/bin/conda" > /root/.local/share/r-miniconda
 
 RUN apt-get update && \
-    apt-get install -y fonts-dejavu libxkbcommon-x11-0 && \
-    wget -P /tmp/ https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.07.2-576-amd64.deb && \
-    dpkg -i /tmp/rstudio-2022.07.2-576-amd64.deb
+    apt-get install -y fonts-dejavu libxkbcommon-x11-0 libatk-bridge2.0-0 libgtk-3-0 && \
+    wget -P /tmp/ https://s3.amazonaws.com/rstudio-ide-build/electron/jammy/amd64/rstudio-2023.09.1-494-amd64.deb && \
+    dpkg -i /tmp/rstudio-2023.09.1-494-amd64.deb
 
-RUN pip install scanpy loompy scvelo
+RUN pip install scanpy loompy scvelo && \
+    pip cache purge
 
 RUN apt-get install -y libboost-all-dev && \
     Rscript -e "\
@@ -89,4 +91,4 @@ RUN Rscript -e "\
         install_github('bnprks/BPCells'); \
         install_github('immunogenomics/presto');"
 
-RUN rm -r /tmp/Rtmp* /tmp/rstudio-2022.07.2-576-amd64.deb
+RUN rm -r /tmp/Rtmp* /tmp/rstudio-2023.09.1-494-amd64.deb
