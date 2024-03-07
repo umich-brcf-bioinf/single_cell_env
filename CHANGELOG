@@ -1,12 +1,16 @@
 # Changelog
+0.11.2 (03/07/2024)
+-------------------
+- Remove 'monocle' and replace 'monocle3'
+- tmp cleanup within individual layers
 
-0.11.1 (02/12/2022)
+0.11.1 (02/12/2024)
 -------------------
 - Add Azimuth R library for use with Seurat5
 - Use newer rstudio
 - Clean cache in pip layer to reduce image size
 
-0.11.0 (12/20/2022)
+0.11.0 (12/20/2023)
 -------------------
 - Update base image to Bioconductor 3.18 with R 4.3.2
 - Update Seurat to v5
