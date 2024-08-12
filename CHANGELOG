@@ -1,4 +1,11 @@
 # Changelog
+
+0.12.0 (08/12/2024)
+-------------------
+- Update base image to Bioconductor 3.19 with R 4.4.0
+- Update Seurat to 5.1.0
+- Add R package 'arrow' required for Visium HD
+
 0.11.2 (03/07/2024)
 -------------------
 - Remove 'monocle' and replace 'monocle3'

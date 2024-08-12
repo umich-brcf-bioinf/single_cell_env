@@ -1,4 +1,4 @@
-FROM bioconductor/bioconductor_docker:RELEASE_3_18-R-4.3.2
+FROM bioconductor/bioconductor_docker:RELEASE_3_19-R-4.4.0
 
 RUN Rscript -e "\
     install.packages(c(\
@@ -48,9 +48,7 @@ RUN Rscript -e "\
 
 RUN Rscript -e "\
         library(devtools); \
-        devtools::install_github('mojaveazure/seurat-object@v5.0.1'); \
-        devtools::install_github('satijalab/seurat@v5.0.1'); \
-        devtools::install_github('satijalab/azimuth');"
+        devtools::install_github('satijalab/seurat@v5.1.0');"
 
 RUN wget -P /tmp https://repo.anaconda.com/miniconda/Miniconda3-py311_23.10.0-1-Linux-x86_64.sh && \
     sha256sum /tmp/Miniconda3-py311_23.10.0-1-Linux-x86_64.sh && \
@@ -96,3 +94,5 @@ RUN Rscript -e "\
         install_github('bnprks/BPCells'); \
         install_github('immunogenomics/presto');"
 
+RUN Rscript -e "\
+    install.packages('arrow');"
