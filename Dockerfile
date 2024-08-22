@@ -96,3 +96,9 @@ RUN Rscript -e "\
 
 RUN Rscript -e "\
     install.packages('arrow');"
+
+RUN Rscript -e "\
+    library(reticulate); \
+    virtualenv_create('r-reticulate'); \
+    virtualenv_install('r-reticulate', 'leidenalg'); \
+    install.packages('harmony');"
