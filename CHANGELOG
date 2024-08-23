@@ -1,5 +1,11 @@
 # Changelog
 
+
+0.12.1 (08/23/2024)
+-------------------
+- Add Harmony package and leiden algorithm
+  - 'leidenalg' is a python package, so you must use reticulate::use_virtualenv('r-reticulate') to make it available in R
+
 0.12.0 (08/12/2024)
 -------------------
 - Update base image to Bioconductor 3.19 with R 4.4.0
