@@ -1,5 +1,8 @@
 # Changelog
 
+0.12.2 (10/09/2024)
+-------------------
+- Fixed install of BPCells since it had silently failed; developer had moved the R package within their repo
 
 0.12.1 (08/23/2024)
 -------------------

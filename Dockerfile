@@ -91,7 +91,7 @@ RUN Rscript -e "\
 
 RUN Rscript -e "\
         library(devtools); \
-        install_github('bnprks/BPCells'); \
+        install_github('bnprks/BPCells/r'); \
         install_github('immunogenomics/presto');"
 
 RUN Rscript -e "\
