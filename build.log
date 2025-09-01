@@ -1,0 +1,227 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.76kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/bioconductor/bioconductor_docker:RELEASE_3_19-R-4.4.0
+#2 DONE 0.4s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [ 1/11] FROM docker.io/bioconductor/bioconductor_docker:RELEASE_3_19-R-4.4.0@sha256:138d509e961b4cd00dd7cd6dd4d135d452d34c74c76b7df29b5ee3085064a69b
+#4 DONE 0.0s
+
+#5 [ 3/11] RUN Rscript -e "        library(devtools);         devtools::install_github('satijalab/seurat@v5.1.0');"
+#5 CACHED
+
+#6 [ 4/11] RUN wget -P /tmp https://repo.anaconda.com/miniconda/Miniconda3-py311_23.10.0-1-Linux-x86_64.sh &&     sha256sum /tmp/Miniconda3-py311_23.10.0-1-Linux-x86_64.sh &&     bash /tmp/Miniconda3-py311_23.10.0-1-Linux-x86_64.sh -p /miniconda -b &&     rm /tmp/Miniconda3-py311_23.10.0-1-Linux-x86_64.sh
+#6 CACHED
+
+#7 [ 8/11] RUN pip install cmake --upgrade
+#7 CACHED
+
+#8 [ 7/11] RUN pip install scanpy loompy scvelo &&     pip cache purge
+#8 CACHED
+
+#9 [ 2/11] RUN Rscript -e "    install.packages(c(        'bookdown',         'ComplexUpset',         'cowplot',         'dplyr',         'ggplot2',         'ggrepel',         'hdf5r',         'Hmisc',         'kableExtra',         'locfit',         'metap',         'patchwork',         'plotly',         'reticulate',         'Signac',         'tidyverse'));     BiocManager::install(c(        'AnnotationDbi',         'AnnotationFilter',         'batchelor',         'BiocGenerics',         'DelayedArray',         'DelayedMatrixStats',         'DESeq2',         'EnsDb.Mmusculus.v79',         'EnsDb.Hsapiens.v75',         'GenomeInfoDb',         'GenomicFeatures',         'GenomicRanges',         'ggbio',         'glmGamPoi',         'IRanges',         'limma',         'MAST',         'Matrix',         'Matrix.utils',         'motifmatchr',         'multtest',         'Rsamtools',         'S4Vectors',         'SingleCellExperiment',         'SummarizedExperiment'));" &&     rm -r /tmp/Rtmp*
+#9 CACHED
+
+#10 [ 5/11] RUN mkdir -p /root/.local/share &&     echo "/miniconda/bin/conda" > /root/.local/share/r-miniconda
+#10 CACHED
+
+#11 [ 9/11] RUN Rscript -e "    install.packages('rliger');     install.packages('RcppPlanc', repos = 'https://welch-lab.r-universe.dev');"
+#11 CACHED
+
+#12 [ 6/11] RUN apt-get update &&     apt-get install -y fonts-dejavu libxkbcommon-x11-0 libatk-bridge2.0-0 libgtk-3-0 &&     wget -P /tmp/ https://s3.amazonaws.com/rstudio-ide-build/electron/jammy/amd64/rstudio-2023.09.1-494-amd64.deb &&     dpkg -i /tmp/rstudio-2023.09.1-494-amd64.deb &&     rm /tmp/rstudio-2023.09.1-494-amd64.deb
+#12 CACHED
+
+#13 [10/11] RUN mkdir /opt/virtualenvs/ &&     export WORKON_HOME=/opt/virtualenvs ; Rscript -e "    library(reticulate);     virtualenv_create('r-reticulate');     virtualenv_install('r-reticulate', 'pandas');     virtualenv_install('r-reticulate', 'leidenalg');     install.packages('harmony');"
+#13 CACHED
+
+#14 [11/11] RUN Rscript -e "    BiocManager::install('TOAST');     install.packages('devtools');     devtools::install_github('xuranw/MuSiC');"
+#14 1.551 'getOption("repos")' replaces Bioconductor standard repositories, see
+#14 1.551 'help("repositories", package = "BiocManager")' for details.
+#14 1.551 Replacement repositories:
+#14 1.551     CRAN: https://p3m.dev/cran/__linux__/jammy/latest
+#14 6.829 Bioconductor version 3.19 (BiocManager 1.30.23), R 4.4.0 (2024-04-24)
+#14 6.830 Installing package(s) 'TOAST'
+#14 7.478 also installing the dependencies ‘proxy’, ‘e1071’, ‘locfdr’, ‘foreach’, ‘iterators’, ‘EpiDISH’, ‘nnls’, ‘quadprog’, ‘corpcor’, ‘doParallel’
+#14 7.478 
+#14 7.479 trying URL 'https://bioconductor.org/packages/3.19/container-binaries/bioconductor_docker/src/contrib/proxy_0.4-27_R_x86_64-pc-linux-gnu.tar.gz'
+#14 7.803 Content type 'application/gzip' length 175545 bytes (171 KB)
+#14 7.803 ==================================================
+#14 7.851 downloaded 171 KB
+#14 7.851 
+#14 7.855 trying URL 'https://bioconductor.org/packages/3.19/container-binaries/bioconductor_docker/src/contrib/e1071_1.7-16_R_x86_64-pc-linux-gnu.tar.gz'
+#14 8.234 Content type 'application/gzip' length 596107 bytes (582 KB)
+#14 8.234 ==================================================
+#14 8.311 downloaded 582 KB
+#14 8.311 
+#14 8.317 trying URL 'https://bioconductor.org/packages/3.19/container-binaries/bioconductor_docker/src/contrib/locfdr_1.1-8_R_x86_64-pc-linux-gnu.tar.gz'
+#14 8.808 Content type 'application/gzip' length 305393 bytes (298 KB)
+#14 8.808 ==================================================
+#14 8.866 downloaded 298 KB
+#14 8.866 
+#14 8.871 trying URL 'https://bioconductor.org/packages/3.19/container-binaries/bioconductor_docker/src/contrib/foreach_1.5.2_R_x86_64-pc-linux-gnu.tar.gz'
+#14 9.252 Content type 'application/gzip' length 139752 bytes (136 KB)
+#14 9.252 ==================================================
+#14 9.292 downloaded 136 KB
+#14 9.292 
+#14 9.297 trying URL 'https://bioconductor.org/packages/3.19/container-binaries/bioconductor_docker/src/contrib/iterators_1.0.14_R_x86_64-pc-linux-gnu.tar.gz'
+#14 9.778 Content type 'application/gzip' length 346473 bytes (338 KB)
+#14 9.778 ==================================================
+#14 9.845 downloaded 338 KB
+#14 9.845 
+#14 9.851 trying URL 'https://bioconductor.org/packages/3.19/container-binaries/bioconductor_docker/src/contrib/EpiDISH_2.20.1_R_x86_64-pc-linux-gnu.tar.gz'
+#14 10.37 Content type 'application/gzip' length 1930016 bytes (1.8 MB)
+#14 10.38 ==================================================
+#14 10.52 downloaded 1.8 MB
+#14 10.52 
+#14 10.52 trying URL 'https://bioconductor.org/packages/3.19/container-binaries/bioconductor_docker/src/contrib/nnls_1.6_R_x86_64-pc-linux-gnu.tar.gz'
+#14 11.01 Content type 'application/gzip' length 37010 bytes (36 KB)
+#14 11.01 ==================================================
+#14 11.03 downloaded 36 KB
+#14 11.03 
+#14 11.04 trying URL 'https://bioconductor.org/packages/3.19/container-binaries/bioconductor_docker/src/contrib/quadprog_1.5-8_R_x86_64-pc-linux-gnu.tar.gz'
+#14 11.42 Content type 'application/gzip' length 30808 bytes (30 KB)
+#14 11.42 ==================================================
+#14 11.44 downloaded 30 KB
+#14 11.44 
+#14 11.45 trying URL 'https://bioconductor.org/packages/3.19/container-binaries/bioconductor_docker/src/contrib/corpcor_1.6.10_R_x86_64-pc-linux-gnu.tar.gz'
+#14 11.95 Content type 'application/gzip' length 116055 bytes (113 KB)
+#14 11.95 ==================================================
+#14 11.98 downloaded 113 KB
+#14 11.98 
+#14 11.99 trying URL 'https://bioconductor.org/packages/3.19/container-binaries/bioconductor_docker/src/contrib/doParallel_1.0.17_R_x86_64-pc-linux-gnu.tar.gz'
+#14 12.48 Content type 'application/gzip' length 188157 bytes (183 KB)
+#14 12.48 ==================================================
+#14 12.53 downloaded 183 KB
+#14 12.53 
+#14 12.53 trying URL 'https://bioconductor.org/packages/3.19/container-binaries/bioconductor_docker/src/contrib/TOAST_1.18.0_R_x86_64-pc-linux-gnu.tar.gz'
+#14 13.25 Content type 'application/gzip' length 3907306 bytes (3.7 MB)
+#14 13.27 ==================================================
+#14 13.55 downloaded 3.7 MB
+#14 13.55 
+#14 14.08 * installing *binary* package ‘proxy’ ...
+#14 14.11 * DONE (proxy)
+#14 14.64 * installing *binary* package ‘locfdr’ ...
+#14 14.67 * DONE (locfdr)
+#14 15.20 * installing *binary* package ‘iterators’ ...
+#14 15.24 * DONE (iterators)
+#14 15.75 * installing *binary* package ‘nnls’ ...
+#14 15.79 * DONE (nnls)
+#14 16.30 * installing *binary* package ‘quadprog’ ...
+#14 16.33 * DONE (quadprog)
+#14 16.85 * installing *binary* package ‘corpcor’ ...
+#14 16.88 * DONE (corpcor)
+#14 17.41 * installing *binary* package ‘e1071’ ...
+#14 17.45 * DONE (e1071)
+#14 17.97 * installing *binary* package ‘foreach’ ...
+#14 18.02 * DONE (foreach)
+#14 18.62 * installing *binary* package ‘EpiDISH’ ...
+#14 18.65 * DONE (EpiDISH)
+#14 19.18 * installing *binary* package ‘doParallel’ ...
+#14 19.22 * DONE (doParallel)
+#14 19.84 * installing *binary* package ‘TOAST’ ...
+#14 19.88 * DONE (TOAST)
+#14 19.91 
+#14 19.91 The downloaded source packages are in
+#14 19.91 	‘/tmp/RtmpYdSk4D/downloaded_packages’
+#14 20.79 Old packages: 'BiocManager', 'bookdown', 'checkmate', 'crayon', 'credentials',
+#14 20.79   'crosstalk', 'curl', 'diffobj', 'docopt', 'downlit', 'evaluate', 'gert',
+#14 20.79   'GGally', 'ggridges', 'gh', 'httr2', 'later', 'littler', 'Matrix',
+#14 20.79   'patchwork', 'pkgbuild', 'pkgdown', 'pkgload', 'processx', 'profvis', 'ps',
+#14 20.79   'ragg', 'RcppArmadillo', 'rliger', 'roxygen2', 'rprojroot', 'RSQLite',
+#14 20.79   'rstudioapi', 'rvest', 'sessioninfo', 'Seurat', 'SeuratObject',
+#14 20.79   'spatstat.data', 'testthat', 'textshaping', 'usethis', 'waldo', 'xfun',
+#14 20.79   'XML', 'xml2', 'zip', 'boot', 'class', 'cluster', 'foreign', 'KernSmooth',
+#14 20.79   'lattice', 'MASS', 'mgcv', 'nlme', 'nnet', 'rpart', 'spatial', 'survival'
+#14 20.79 Installing package into ‘/usr/local/lib/R/site-library’
+#14 20.79 (as ‘lib’ is unspecified)
+#14 21.00 trying URL 'https://p3m.dev/cran/__linux__/jammy/latest/src/contrib/devtools_2.4.5.tar.gz'
+#14 21.49 Content type 'binary/octet-stream' length 435688 bytes (425 KB)
+#14 21.49 ==================================================
+#14 21.53 downloaded 425 KB
+#14 21.53 
+#14 22.05 * installing *binary* package ‘devtools’ ...
+#14 22.13 * DONE (devtools)
+#14 22.16 
+#14 22.16 The downloaded source packages are in
+#14 22.16 	‘/tmp/RtmpYdSk4D/downloaded_packages’
+#14 23.45 Downloading GitHub repo xuranw/MuSiC@HEAD
+#14 41.91 mcmc     (NA -> 0.9-8   ) [CRAN]
+#14 41.91 coda     (NA -> 0.19-4.1) [CRAN]
+#14 41.91 MCMCpack (NA -> 1.7-1   ) [CRAN]
+#14 41.91 Skipping 3 packages not available: SingleCellExperiment, Biobase, TOAST
+#14 41.91 Installing 3 packages: mcmc, coda, MCMCpack
+#14 41.92 Installing packages into ‘/usr/local/lib/R/site-library’
+#14 41.92 (as ‘lib’ is unspecified)
+#14 42.13 trying URL 'https://p3m.dev/cran/__linux__/jammy/latest/src/contrib/mcmc_0.9-8.tar.gz'
+#14 42.61 Content type 'binary/octet-stream' length 1379344 bytes (1.3 MB)
+#14 42.62 ==================================================
+#14 42.76 downloaded 1.3 MB
+#14 42.76 
+#14 42.77 trying URL 'https://p3m.dev/cran/__linux__/jammy/latest/src/contrib/coda_0.19-4.1.tar.gz'
+#14 43.16 Content type 'binary/octet-stream' length 328771 bytes (321 KB)
+#14 43.16 ==================================================
+#14 43.20 downloaded 321 KB
+#14 43.20 
+#14 43.20 trying URL 'https://p3m.dev/cran/__linux__/jammy/latest/src/contrib/MCMCpack_1.7-1.tar.gz'
+#14 43.56 Content type 'binary/octet-stream' length 2235653 bytes (2.1 MB)
+#14 43.57 ==================================================
+#14 43.72 downloaded 2.1 MB
+#14 43.72 
+#14 44.26 * installing *binary* package ‘mcmc’ ...
+#14 44.29 * DONE (mcmc)
+#14 44.81 * installing *binary* package ‘coda’ ...
+#14 44.85 * DONE (coda)
+#14 45.47 * installing *binary* package ‘MCMCpack’ ...
+#14 45.51 * DONE (MCMCpack)
+#14 45.54 
+#14 45.54 The downloaded source packages are in
+#14 45.54 	‘/tmp/RtmpYdSk4D/downloaded_packages’
+#14 45.60 ── R CMD build ─────────────────────────────────────────────────────────────────
+#14 46.05 * checking for file ‘/tmp/RtmpYdSk4D/remotes75d3b30/xuranw-MuSiC-f21fe67/DESCRIPTION’ ... OK
+#14 46.15 * preparing ‘MuSiC’:
+#14 46.15 * checking DESCRIPTION meta-information ... OK
+#14 46.62 * checking for LF line-endings in source and make files and shell scripts
+#14 46.62 * checking for empty or unneeded directories
+#14 46.62 Omitted ‘LazyData’ from DESCRIPTION
+#14 46.63 * building ‘MuSiC_1.0.0.tar.gz’
+#14 49.75 
+#14 49.81 Installing package into ‘/usr/local/lib/R/site-library’
+#14 49.81 (as ‘lib’ is unspecified)
+#14 51.93 * installing *source* package ‘MuSiC’ ...
+#14 51.93 ** using staged installation
+#14 51.95 ** R
+#14 51.96 ** byte-compile and prepare package for lazy loading
+#14 57.67 Warning messages:
+#14 57.67 1: package ‘TOAST’ was built under R version 4.4.1 
+#14 57.67 2: package ‘EpiDISH’ was built under R version 4.4.1 
+#14 57.67 3: package ‘limma’ was built under R version 4.4.1 
+#14 57.67 ** help
+#14 57.74 *** installing help indices
+#14 57.78 ** building package indices
+#14 58.22 ** installing vignettes
+#14 58.23 ** testing if installed package can be loaded from temporary location
+#14 62.69 Warning: package ‘TOAST’ was built under R version 4.4.1
+#14 62.69 Warning: package ‘EpiDISH’ was built under R version 4.4.1
+#14 62.69 Warning: package ‘limma’ was built under R version 4.4.1
+#14 62.72 ** testing if installed package can be loaded from final location
+#14 67.15 Warning: package ‘TOAST’ was built under R version 4.4.1
+#14 67.15 Warning: package ‘EpiDISH’ was built under R version 4.4.1
+#14 67.15 Warning: package ‘limma’ was built under R version 4.4.1
+#14 67.15 ** testing if installed package keeps a record of temporary installation path
+#14 67.15 * DONE (MuSiC)
+#14 DONE 67.3s
+
+#15 exporting to image
+#15 exporting layers 0.0s done
+#15 writing image sha256:ae9a7449e9d9cc7b658c9c9dbbbaff84c335d4c277ae91629bd2951e57158eb2 done
+#15 naming to docker.io/ncarrut/liger:MUSIC done
+#15 DONE 0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/gxd4y8upsi1nneoz2jl1qtz1g

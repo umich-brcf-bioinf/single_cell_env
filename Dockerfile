@@ -69,33 +69,11 @@ RUN apt-get update && \
 RUN pip install scanpy loompy scvelo && \
     pip cache purge
 
-RUN apt-get install -y libboost-all-dev && \
-    Rscript -e "\
-        BiocManager::install('pcaMethods'); \
-        library(devtools); \
-        install_github('velocyto-team/velocyto.R');"
+RUN pip install cmake --upgrade
 
 RUN Rscript -e "\
-        library(devtools); \
-        devtools::install_github('cole-trapnell-lab/monocle3');"
-
-RUN Rscript -e "\
-        library(devtools); \
-        install_github('ZJUFanLab/scCATCH');"
-
-RUN Rscript -e "\
-    BiocManager::install(c(\
-        'celda')); \
-    install.packages(c(\
-        'SoupX'));"
-
-RUN Rscript -e "\
-        library(devtools); \
-        install_github('bnprks/BPCells/r'); \
-        install_github('immunogenomics/presto');"
-
-RUN Rscript -e "\
-    install.packages('arrow');"
+    install.packages('rliger'); \
+    install.packages('RcppPlanc', repos = 'https://welch-lab.r-universe.dev');"
 
 RUN mkdir /opt/virtualenvs/ && \
     export WORKON_HOME=/opt/virtualenvs ; Rscript -e "\
@@ -106,3 +84,8 @@ RUN mkdir /opt/virtualenvs/ && \
     install.packages('harmony');"
 
 ENV WORKON_HOME=/opt/virtualenvs
+
+RUN Rscript -e "\
+    BiocManager::install('TOAST'); \
+    install.packages('devtools'); \
+    devtools::install_github('xuranw/MuSiC');"
