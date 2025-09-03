@@ -86,6 +86,6 @@ RUN mkdir /opt/virtualenvs/ && \
 ENV WORKON_HOME=/opt/virtualenvs
 
 RUN Rscript -e "\
-    BiocManager::install('TOAST'); \
+    BiocManager::install(c('TOAST', 'zellkonverter')); \
     install.packages('devtools'); \
     devtools::install_github('xuranw/MuSiC');"
