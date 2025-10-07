@@ -8,27 +8,26 @@ Updated the celltypist env [here](https://github.com/Teichlab/celltypist/blob/ma
 * build and retag image:
 
 ```
-docker build -t ncarrut/celltypist_nextflow:update_bbknn --platform=linux/amd64 . 2>&1 | tee build.log
+docker build -t ncarrut/celltypist_nextflow:scvi_cuda --platform=linux/amd64 . 2>&1 | tee build.log
 ```
 
 * push to docker hub:
 
 ```
-docker push ncarrut/celltypist_nextflow:update_bbknn
-
+docker push ncarrut/celltypist_nextflow:scvi_cuda
 ```
 
 * git commit with tag and push to github
 
 ```
 git add .
-git commit -m "added bbknn"
-git tag bbknn
+git commit -m "added scvi, cuda based on porchard cellbender"
+git tag scvi_cuda
 git push
 ```
 
 push tag too
 ```
-git push origin bbknn
+git push origin scvi_cuda
 ```
 

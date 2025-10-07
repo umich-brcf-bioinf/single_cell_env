@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM porchard/cellbender:0.3.0
 
 ENV CELLTYPIST_FOLDER="/opt/celltypist"
 ENV PATH="$CELLTYPIST_FOLDER/bin:$PATH"
