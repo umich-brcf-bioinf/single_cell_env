@@ -1,730 +1,582 @@
 #0 building with "desktop-linux" instance using docker driver
 
 #1 [internal] load build definition from Dockerfile
-#1 transferring dockerfile: 532B done
+#1 transferring dockerfile: 582B done
 #1 DONE 0.0s
 
 #2 [internal] load metadata for docker.io/library/python:3.9-slim
-#2 DONE 0.3s
+#2 ...
 
-#3 [internal] load .dockerignore
-#3 transferring context: 2B done
+#3 [auth] library/python:pull token for registry-1.docker.io
 #3 DONE 0.0s
 
-#4 [1/4] FROM docker.io/library/python:3.9-slim@sha256:151b796af055298f244bc4d203bc19e19b0e63c8aa26c4fed2fc6809ea9b7caf
-#4 CACHED
+#2 [internal] load metadata for docker.io/library/python:3.9-slim
+#2 DONE 0.6s
 
-#5 [2/4] RUN apt-get update &&     apt-get install -y build-essential
-#5 0.468 Hit:1 http://deb.debian.org/debian trixie InRelease
-#5 0.470 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
-#5 0.491 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
-#5 0.570 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9669 kB]
-#5 0.933 Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [5412 B]
-#5 0.933 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [51.4 kB]
-#5 1.680 Fetched 9816 kB in 1s (6840 kB/s)
-#5 1.680 Reading package lists...
-#5 2.170 Reading package lists...
-#5 2.608 Building dependency tree...
-#5 2.703 Reading state information...
-#5 3.056 The following additional packages will be installed:
-#5 3.056   binutils binutils-common binutils-x86-64-linux-gnu bzip2 cpp cpp-14
-#5 3.056   cpp-14-x86-64-linux-gnu cpp-x86-64-linux-gnu dpkg-dev fakeroot g++ g++-14
-#5 3.056   g++-14-x86-64-linux-gnu g++-x86-64-linux-gnu gcc gcc-14
-#5 3.056   gcc-14-x86-64-linux-gnu gcc-x86-64-linux-gnu libalgorithm-diff-perl
-#5 3.056   libalgorithm-diff-xs-perl libalgorithm-merge-perl libasan8 libatomic1
-#5 3.056   libbinutils libc-dev-bin libc6-dev libcc1-0 libcrypt-dev libctf-nobfd0
-#5 3.056   libctf0 libdpkg-perl libfakeroot libfile-fcntllock-perl libgcc-14-dev
-#5 3.056   libgdbm-compat4t64 libgomp1 libgprofng0 libhwasan0 libisl23 libitm1
-#5 3.056   libjansson4 liblocale-gettext-perl liblsan0 libmpc3 libmpfr6 libperl5.40
-#5 3.057   libquadmath0 libsframe1 libstdc++-14-dev libtsan2 libubsan1 linux-libc-dev
-#5 3.057   make manpages manpages-dev patch perl perl-modules-5.40 rpcsvc-proto sq
-#5 3.057   xz-utils
-#5 3.058 Suggested packages:
-#5 3.058   binutils-doc gprofng-gui binutils-gold bzip2-doc cpp-doc gcc-14-locales
-#5 3.058   cpp-14-doc debian-keyring debian-tag2upload-keyring g++-multilib
-#5 3.058   g++-14-multilib gcc-14-doc gcc-multilib autoconf automake libtool flex bison
-#5 3.058   gdb gcc-doc gcc-14-multilib gdb-x86-64-linux-gnu libc-devtools glibc-doc
-#5 3.058   sensible-utils git bzr libstdc++-14-doc make-doc man-browser ed
-#5 3.058   diffutils-doc perl-doc libterm-readline-gnu-perl
-#5 3.058   | libterm-readline-perl-perl libtap-harness-archive-perl
-#5 3.229 The following NEW packages will be installed:
-#5 3.229   binutils binutils-common binutils-x86-64-linux-gnu build-essential bzip2 cpp
-#5 3.229   cpp-14 cpp-14-x86-64-linux-gnu cpp-x86-64-linux-gnu dpkg-dev fakeroot g++
-#5 3.229   g++-14 g++-14-x86-64-linux-gnu g++-x86-64-linux-gnu gcc gcc-14
-#5 3.229   gcc-14-x86-64-linux-gnu gcc-x86-64-linux-gnu libalgorithm-diff-perl
-#5 3.229   libalgorithm-diff-xs-perl libalgorithm-merge-perl libasan8 libatomic1
-#5 3.229   libbinutils libc-dev-bin libc6-dev libcc1-0 libcrypt-dev libctf-nobfd0
-#5 3.229   libctf0 libdpkg-perl libfakeroot libfile-fcntllock-perl libgcc-14-dev
-#5 3.230   libgdbm-compat4t64 libgomp1 libgprofng0 libhwasan0 libisl23 libitm1
-#5 3.230   libjansson4 liblocale-gettext-perl liblsan0 libmpc3 libmpfr6 libperl5.40
-#5 3.230   libquadmath0 libsframe1 libstdc++-14-dev libtsan2 libubsan1 linux-libc-dev
-#5 3.230   make manpages manpages-dev patch perl perl-modules-5.40 rpcsvc-proto sq
-#5 3.231   xz-utils
-#5 3.358 0 upgraded, 62 newly installed, 0 to remove and 3 not upgraded.
-#5 3.358 Need to get 91.7 MB of archives.
-#5 3.358 After this operation, 365 MB of additional disk space will be used.
-#5 3.358 Get:1 http://deb.debian.org/debian trixie/main amd64 liblocale-gettext-perl amd64 1.07-7+b1 [15.3 kB]
-#5 3.381 Get:2 http://deb.debian.org/debian trixie/main amd64 bzip2 amd64 1.0.8-6 [40.5 kB]
-#5 3.392 Get:3 http://deb.debian.org/debian trixie/main amd64 manpages all 6.9.1-1 [1393 kB]
-#5 3.486 Get:4 http://deb.debian.org/debian trixie/main amd64 perl-modules-5.40 all 5.40.1-6 [3019 kB]
-#5 3.582 Get:5 http://deb.debian.org/debian trixie/main amd64 libgdbm-compat4t64 amd64 1.24-2 [50.3 kB]
-#5 3.584 Get:6 http://deb.debian.org/debian trixie/main amd64 libperl5.40 amd64 5.40.1-6 [4341 kB]
-#5 3.683 Get:7 http://deb.debian.org/debian trixie/main amd64 perl amd64 5.40.1-6 [267 kB]
-#5 3.689 Get:8 http://deb.debian.org/debian trixie/main amd64 xz-utils amd64 5.8.1-1 [660 kB]
-#5 3.703 Get:9 http://deb.debian.org/debian trixie/main amd64 libsframe1 amd64 2.44-3 [78.4 kB]
-#5 3.704 Get:10 http://deb.debian.org/debian trixie/main amd64 binutils-common amd64 2.44-3 [2509 kB]
-#5 3.769 Get:11 http://deb.debian.org/debian trixie/main amd64 libbinutils amd64 2.44-3 [534 kB]
-#5 3.779 Get:12 http://deb.debian.org/debian trixie/main amd64 libgprofng0 amd64 2.44-3 [808 kB]
-#5 3.801 Get:13 http://deb.debian.org/debian trixie/main amd64 libctf-nobfd0 amd64 2.44-3 [156 kB]
-#5 3.804 Get:14 http://deb.debian.org/debian trixie/main amd64 libctf0 amd64 2.44-3 [88.6 kB]
-#5 3.806 Get:15 http://deb.debian.org/debian trixie/main amd64 libjansson4 amd64 2.14-2+b3 [39.8 kB]
-#5 3.807 Get:16 http://deb.debian.org/debian trixie/main amd64 binutils-x86-64-linux-gnu amd64 2.44-3 [1014 kB]
-#5 3.837 Get:17 http://deb.debian.org/debian trixie/main amd64 binutils amd64 2.44-3 [265 kB]
-#5 3.844 Get:18 http://deb.debian.org/debian trixie/main amd64 libc-dev-bin amd64 2.41-12 [58.2 kB]
-#5 3.846 Get:19 http://deb.debian.org/debian-security trixie-security/main amd64 linux-libc-dev all 6.12.48-1 [2671 kB]
-#5 3.909 Get:20 http://deb.debian.org/debian trixie/main amd64 libcrypt-dev amd64 1:4.4.38-1 [119 kB]
-#5 3.912 Get:21 http://deb.debian.org/debian trixie/main amd64 rpcsvc-proto amd64 1.4.3-1 [63.3 kB]
-#5 3.933 Get:22 http://deb.debian.org/debian trixie/main amd64 libc6-dev amd64 2.41-12 [1991 kB]
-#5 3.977 Get:23 http://deb.debian.org/debian trixie/main amd64 libisl23 amd64 0.27-1 [659 kB]
-#5 3.988 Get:24 http://deb.debian.org/debian trixie/main amd64 libmpfr6 amd64 4.2.2-1 [729 kB]
-#5 4.005 Get:25 http://deb.debian.org/debian trixie/main amd64 libmpc3 amd64 1.3.1-1+b3 [52.2 kB]
-#5 4.006 Get:26 http://deb.debian.org/debian trixie/main amd64 cpp-14-x86-64-linux-gnu amd64 14.2.0-19 [11.0 MB]
-#5 4.294 Get:27 http://deb.debian.org/debian trixie/main amd64 cpp-14 amd64 14.2.0-19 [1280 B]
-#5 4.295 Get:28 http://deb.debian.org/debian trixie/main amd64 cpp-x86-64-linux-gnu amd64 4:14.2.0-1 [4840 B]
-#5 4.296 Get:29 http://deb.debian.org/debian trixie/main amd64 cpp amd64 4:14.2.0-1 [1568 B]
-#5 4.296 Get:30 http://deb.debian.org/debian trixie/main amd64 libcc1-0 amd64 14.2.0-19 [42.8 kB]
-#5 4.297 Get:31 http://deb.debian.org/debian trixie/main amd64 libgomp1 amd64 14.2.0-19 [137 kB]
-#5 4.299 Get:32 http://deb.debian.org/debian trixie/main amd64 libitm1 amd64 14.2.0-19 [26.0 kB]
-#5 4.299 Get:33 http://deb.debian.org/debian trixie/main amd64 libatomic1 amd64 14.2.0-19 [9308 B]
-#5 4.300 Get:34 http://deb.debian.org/debian trixie/main amd64 libasan8 amd64 14.2.0-19 [2725 kB]
-#5 4.362 Get:35 http://deb.debian.org/debian trixie/main amd64 liblsan0 amd64 14.2.0-19 [1204 kB]
-#5 4.414 Get:36 http://deb.debian.org/debian trixie/main amd64 libtsan2 amd64 14.2.0-19 [2460 kB]
-#5 4.482 Get:37 http://deb.debian.org/debian trixie/main amd64 libubsan1 amd64 14.2.0-19 [1074 kB]
-#5 4.511 Get:38 http://deb.debian.org/debian trixie/main amd64 libhwasan0 amd64 14.2.0-19 [1488 kB]
-#5 4.550 Get:39 http://deb.debian.org/debian trixie/main amd64 libquadmath0 amd64 14.2.0-19 [145 kB]
-#5 4.554 Get:40 http://deb.debian.org/debian trixie/main amd64 libgcc-14-dev amd64 14.2.0-19 [2672 kB]
-#5 4.652 Get:41 http://deb.debian.org/debian trixie/main amd64 gcc-14-x86-64-linux-gnu amd64 14.2.0-19 [21.4 MB]
-#5 5.429 Get:42 http://deb.debian.org/debian trixie/main amd64 gcc-14 amd64 14.2.0-19 [540 kB]
-#5 5.437 Get:43 http://deb.debian.org/debian trixie/main amd64 gcc-x86-64-linux-gnu amd64 4:14.2.0-1 [1436 B]
-#5 5.437 Get:44 http://deb.debian.org/debian trixie/main amd64 gcc amd64 4:14.2.0-1 [5136 B]
-#5 5.438 Get:45 http://deb.debian.org/debian trixie/main amd64 libstdc++-14-dev amd64 14.2.0-19 [2376 kB]
-#5 5.526 Get:46 http://deb.debian.org/debian trixie/main amd64 g++-14-x86-64-linux-gnu amd64 14.2.0-19 [12.1 MB]
-#5 5.919 Get:47 http://deb.debian.org/debian trixie/main amd64 g++-14 amd64 14.2.0-19 [22.5 kB]
-#5 5.920 Get:48 http://deb.debian.org/debian trixie/main amd64 g++-x86-64-linux-gnu amd64 4:14.2.0-1 [1200 B]
-#5 5.921 Get:49 http://deb.debian.org/debian trixie/main amd64 g++ amd64 4:14.2.0-1 [1344 B]
-#5 5.923 Get:50 http://deb.debian.org/debian trixie/main amd64 make amd64 4.4.1-2 [463 kB]
-#5 5.930 Get:51 http://deb.debian.org/debian trixie/main amd64 libdpkg-perl all 1.22.21 [650 kB]
-#5 5.947 Get:52 http://deb.debian.org/debian trixie/main amd64 patch amd64 2.8-2 [134 kB]
-#5 5.961 Get:53 http://deb.debian.org/debian trixie/main amd64 dpkg-dev all 1.22.21 [1338 kB]
-#5 6.008 Get:54 http://deb.debian.org/debian trixie/main amd64 build-essential amd64 12.12 [4624 B]
-#5 6.008 Get:55 http://deb.debian.org/debian trixie/main amd64 libfakeroot amd64 1.37.1.1-1 [29.6 kB]
-#5 6.009 Get:56 http://deb.debian.org/debian trixie/main amd64 fakeroot amd64 1.37.1.1-1 [76.0 kB]
-#5 6.010 Get:57 http://deb.debian.org/debian trixie/main amd64 libalgorithm-diff-perl all 1.201-1 [43.3 kB]
-#5 6.012 Get:58 http://deb.debian.org/debian trixie/main amd64 libalgorithm-diff-xs-perl amd64 0.04-9 [11.1 kB]
-#5 6.012 Get:59 http://deb.debian.org/debian trixie/main amd64 libalgorithm-merge-perl all 0.08-5 [11.8 kB]
-#5 6.013 Get:60 http://deb.debian.org/debian trixie/main amd64 libfile-fcntllock-perl amd64 0.22-4+b4 [34.6 kB]
-#5 6.015 Get:61 http://deb.debian.org/debian trixie/main amd64 manpages-dev all 6.9.1-1 [2122 kB]
-#5 6.076 Get:62 http://deb.debian.org/debian trixie/main amd64 sq amd64 1.3.1-2+b1 [5654 kB]
-#5 6.625 debconf: unable to initialize frontend: Dialog
-#5 6.625 debconf: (TERM is not set, so the dialog frontend is not usable.)
-#5 6.625 debconf: falling back to frontend: Readline
-#5 6.626 debconf: unable to initialize frontend: Readline
-#5 6.626 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/x86_64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 62.)
-#5 6.626 debconf: falling back to frontend: Teletype
-#5 6.676 debconf: unable to initialize frontend: Teletype
-#5 6.676 debconf: (This frontend requires a controlling tty.)
-#5 6.676 debconf: falling back to frontend: Noninteractive
-#5 8.187 Fetched 91.7 MB in 3s (30.5 MB/s)
-#5 8.266 Selecting previously unselected package liblocale-gettext-perl.
-#5 8.266 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 5644 files and directories currently installed.)
-#5 8.278 Preparing to unpack .../00-liblocale-gettext-perl_1.07-7+b1_amd64.deb ...
-#5 8.281 Unpacking liblocale-gettext-perl (1.07-7+b1) ...
-#5 8.373 Selecting previously unselected package bzip2.
-#5 8.374 Preparing to unpack .../01-bzip2_1.0.8-6_amd64.deb ...
-#5 8.375 Unpacking bzip2 (1.0.8-6) ...
-#5 8.462 Selecting previously unselected package manpages.
-#5 8.462 Preparing to unpack .../02-manpages_6.9.1-1_all.deb ...
-#5 8.465 Unpacking manpages (6.9.1-1) ...
-#5 8.580 Selecting previously unselected package perl-modules-5.40.
-#5 8.582 Preparing to unpack .../03-perl-modules-5.40_5.40.1-6_all.deb ...
-#5 8.583 Unpacking perl-modules-5.40 (5.40.1-6) ...
-#5 8.809 Selecting previously unselected package libgdbm-compat4t64:amd64.
-#5 8.811 Preparing to unpack .../04-libgdbm-compat4t64_1.24-2_amd64.deb ...
-#5 8.813 Unpacking libgdbm-compat4t64:amd64 (1.24-2) ...
-#5 8.901 Selecting previously unselected package libperl5.40:amd64.
-#5 8.902 Preparing to unpack .../05-libperl5.40_5.40.1-6_amd64.deb ...
-#5 8.903 Unpacking libperl5.40:amd64 (5.40.1-6) ...
-#5 9.158 Selecting previously unselected package perl.
-#5 9.159 Preparing to unpack .../06-perl_5.40.1-6_amd64.deb ...
-#5 9.161 Unpacking perl (5.40.1-6) ...
-#5 9.259 Selecting previously unselected package xz-utils.
-#5 9.260 Preparing to unpack .../07-xz-utils_5.8.1-1_amd64.deb ...
-#5 9.261 Unpacking xz-utils (5.8.1-1) ...
-#5 9.364 Selecting previously unselected package libsframe1:amd64.
-#5 9.365 Preparing to unpack .../08-libsframe1_2.44-3_amd64.deb ...
-#5 9.366 Unpacking libsframe1:amd64 (2.44-3) ...
-#5 9.455 Selecting previously unselected package binutils-common:amd64.
-#5 9.455 Preparing to unpack .../09-binutils-common_2.44-3_amd64.deb ...
-#5 9.456 Unpacking binutils-common:amd64 (2.44-3) ...
-#5 9.633 Selecting previously unselected package libbinutils:amd64.
-#5 9.634 Preparing to unpack .../10-libbinutils_2.44-3_amd64.deb ...
-#5 9.635 Unpacking libbinutils:amd64 (2.44-3) ...
-#5 9.742 Selecting previously unselected package libgprofng0:amd64.
-#5 9.743 Preparing to unpack .../11-libgprofng0_2.44-3_amd64.deb ...
-#5 9.746 Unpacking libgprofng0:amd64 (2.44-3) ...
-#5 9.864 Selecting previously unselected package libctf-nobfd0:amd64.
-#5 9.864 Preparing to unpack .../12-libctf-nobfd0_2.44-3_amd64.deb ...
-#5 9.865 Unpacking libctf-nobfd0:amd64 (2.44-3) ...
-#5 9.958 Selecting previously unselected package libctf0:amd64.
-#5 9.959 Preparing to unpack .../13-libctf0_2.44-3_amd64.deb ...
-#5 9.960 Unpacking libctf0:amd64 (2.44-3) ...
-#5 10.05 Selecting previously unselected package libjansson4:amd64.
-#5 10.05 Preparing to unpack .../14-libjansson4_2.14-2+b3_amd64.deb ...
-#5 10.05 Unpacking libjansson4:amd64 (2.14-2+b3) ...
-#5 10.14 Selecting previously unselected package binutils-x86-64-linux-gnu.
-#5 10.14 Preparing to unpack .../15-binutils-x86-64-linux-gnu_2.44-3_amd64.deb ...
-#5 10.14 Unpacking binutils-x86-64-linux-gnu (2.44-3) ...
-#5 10.28 Selecting previously unselected package binutils.
-#5 10.28 Preparing to unpack .../16-binutils_2.44-3_amd64.deb ...
-#5 10.29 Unpacking binutils (2.44-3) ...
-#5 10.39 Selecting previously unselected package libc-dev-bin.
-#5 10.39 Preparing to unpack .../17-libc-dev-bin_2.41-12_amd64.deb ...
-#5 10.39 Unpacking libc-dev-bin (2.41-12) ...
-#5 10.48 Selecting previously unselected package linux-libc-dev.
-#5 10.48 Preparing to unpack .../18-linux-libc-dev_6.12.48-1_all.deb ...
-#5 10.48 Unpacking linux-libc-dev (6.12.48-1) ...
-#5 10.67 Selecting previously unselected package libcrypt-dev:amd64.
-#5 10.68 Preparing to unpack .../19-libcrypt-dev_1%3a4.4.38-1_amd64.deb ...
-#5 10.73 Unpacking libcrypt-dev:amd64 (1:4.4.38-1) ...
-#5 10.82 Selecting previously unselected package rpcsvc-proto.
-#5 10.83 Preparing to unpack .../20-rpcsvc-proto_1.4.3-1_amd64.deb ...
-#5 10.83 Unpacking rpcsvc-proto (1.4.3-1) ...
-#5 10.92 Selecting previously unselected package libc6-dev:amd64.
-#5 10.92 Preparing to unpack .../21-libc6-dev_2.41-12_amd64.deb ...
-#5 10.92 Unpacking libc6-dev:amd64 (2.41-12) ...
-#5 11.09 Selecting previously unselected package libisl23:amd64.
-#5 11.09 Preparing to unpack .../22-libisl23_0.27-1_amd64.deb ...
-#5 11.09 Unpacking libisl23:amd64 (0.27-1) ...
-#5 11.20 Selecting previously unselected package libmpfr6:amd64.
-#5 11.20 Preparing to unpack .../23-libmpfr6_4.2.2-1_amd64.deb ...
-#5 11.21 Unpacking libmpfr6:amd64 (4.2.2-1) ...
-#5 11.31 Selecting previously unselected package libmpc3:amd64.
-#5 11.31 Preparing to unpack .../24-libmpc3_1.3.1-1+b3_amd64.deb ...
-#5 11.31 Unpacking libmpc3:amd64 (1.3.1-1+b3) ...
-#5 11.40 Selecting previously unselected package cpp-14-x86-64-linux-gnu.
-#5 11.40 Preparing to unpack .../25-cpp-14-x86-64-linux-gnu_14.2.0-19_amd64.deb ...
-#5 11.40 Unpacking cpp-14-x86-64-linux-gnu (14.2.0-19) ...
-#5 11.81 Selecting previously unselected package cpp-14.
-#5 11.81 Preparing to unpack .../26-cpp-14_14.2.0-19_amd64.deb ...
-#5 11.82 Unpacking cpp-14 (14.2.0-19) ...
-#5 11.90 Selecting previously unselected package cpp-x86-64-linux-gnu.
-#5 11.90 Preparing to unpack .../27-cpp-x86-64-linux-gnu_4%3a14.2.0-1_amd64.deb ...
-#5 11.90 Unpacking cpp-x86-64-linux-gnu (4:14.2.0-1) ...
-#5 11.99 Selecting previously unselected package cpp.
-#5 11.99 Preparing to unpack .../28-cpp_4%3a14.2.0-1_amd64.deb ...
-#5 12.05 Unpacking cpp (4:14.2.0-1) ...
-#5 12.14 Selecting previously unselected package libcc1-0:amd64.
-#5 12.14 Preparing to unpack .../29-libcc1-0_14.2.0-19_amd64.deb ...
-#5 12.14 Unpacking libcc1-0:amd64 (14.2.0-19) ...
-#5 12.23 Selecting previously unselected package libgomp1:amd64.
-#5 12.23 Preparing to unpack .../30-libgomp1_14.2.0-19_amd64.deb ...
-#5 12.23 Unpacking libgomp1:amd64 (14.2.0-19) ...
-#5 12.32 Selecting previously unselected package libitm1:amd64.
-#5 12.32 Preparing to unpack .../31-libitm1_14.2.0-19_amd64.deb ...
-#5 12.33 Unpacking libitm1:amd64 (14.2.0-19) ...
-#5 12.42 Selecting previously unselected package libatomic1:amd64.
-#5 12.42 Preparing to unpack .../32-libatomic1_14.2.0-19_amd64.deb ...
-#5 12.42 Unpacking libatomic1:amd64 (14.2.0-19) ...
-#5 12.51 Selecting previously unselected package libasan8:amd64.
-#5 12.51 Preparing to unpack .../33-libasan8_14.2.0-19_amd64.deb ...
-#5 12.51 Unpacking libasan8:amd64 (14.2.0-19) ...
-#5 12.70 Selecting previously unselected package liblsan0:amd64.
-#5 12.70 Preparing to unpack .../34-liblsan0_14.2.0-19_amd64.deb ...
-#5 12.70 Unpacking liblsan0:amd64 (14.2.0-19) ...
-#5 12.84 Selecting previously unselected package libtsan2:amd64.
-#5 12.84 Preparing to unpack .../35-libtsan2_14.2.0-19_amd64.deb ...
-#5 12.84 Unpacking libtsan2:amd64 (14.2.0-19) ...
-#5 13.02 Selecting previously unselected package libubsan1:amd64.
-#5 13.02 Preparing to unpack .../36-libubsan1_14.2.0-19_amd64.deb ...
-#5 13.02 Unpacking libubsan1:amd64 (14.2.0-19) ...
-#5 13.15 Selecting previously unselected package libhwasan0:amd64.
-#5 13.15 Preparing to unpack .../37-libhwasan0_14.2.0-19_amd64.deb ...
-#5 13.15 Unpacking libhwasan0:amd64 (14.2.0-19) ...
-#5 13.30 Selecting previously unselected package libquadmath0:amd64.
-#5 13.30 Preparing to unpack .../38-libquadmath0_14.2.0-19_amd64.deb ...
-#5 13.30 Unpacking libquadmath0:amd64 (14.2.0-19) ...
-#5 13.39 Selecting previously unselected package libgcc-14-dev:amd64.
-#5 13.39 Preparing to unpack .../39-libgcc-14-dev_14.2.0-19_amd64.deb ...
-#5 13.40 Unpacking libgcc-14-dev:amd64 (14.2.0-19) ...
-#5 13.58 Selecting previously unselected package gcc-14-x86-64-linux-gnu.
-#5 13.58 Preparing to unpack .../40-gcc-14-x86-64-linux-gnu_14.2.0-19_amd64.deb ...
-#5 13.58 Unpacking gcc-14-x86-64-linux-gnu (14.2.0-19) ...
-#5 14.08 Selecting previously unselected package gcc-14.
-#5 14.08 Preparing to unpack .../41-gcc-14_14.2.0-19_amd64.deb ...
-#5 14.08 Unpacking gcc-14 (14.2.0-19) ...
-#5 14.18 Selecting previously unselected package gcc-x86-64-linux-gnu.
-#5 14.18 Preparing to unpack .../42-gcc-x86-64-linux-gnu_4%3a14.2.0-1_amd64.deb ...
-#5 14.18 Unpacking gcc-x86-64-linux-gnu (4:14.2.0-1) ...
-#5 14.27 Selecting previously unselected package gcc.
-#5 14.27 Preparing to unpack .../43-gcc_4%3a14.2.0-1_amd64.deb ...
-#5 14.27 Unpacking gcc (4:14.2.0-1) ...
-#5 14.36 Selecting previously unselected package libstdc++-14-dev:amd64.
-#5 14.36 Preparing to unpack .../44-libstdc++-14-dev_14.2.0-19_amd64.deb ...
-#5 14.36 Unpacking libstdc++-14-dev:amd64 (14.2.0-19) ...
-#5 14.54 Selecting previously unselected package g++-14-x86-64-linux-gnu.
-#5 14.54 Preparing to unpack .../45-g++-14-x86-64-linux-gnu_14.2.0-19_amd64.deb ...
-#5 14.54 Unpacking g++-14-x86-64-linux-gnu (14.2.0-19) ...
-#5 14.98 Selecting previously unselected package g++-14.
-#5 14.98 Preparing to unpack .../46-g++-14_14.2.0-19_amd64.deb ...
-#5 14.98 Unpacking g++-14 (14.2.0-19) ...
-#5 15.07 Selecting previously unselected package g++-x86-64-linux-gnu.
-#5 15.07 Preparing to unpack .../47-g++-x86-64-linux-gnu_4%3a14.2.0-1_amd64.deb ...
-#5 15.07 Unpacking g++-x86-64-linux-gnu (4:14.2.0-1) ...
-#5 15.16 Selecting previously unselected package g++.
-#5 15.16 Preparing to unpack .../48-g++_4%3a14.2.0-1_amd64.deb ...
-#5 15.16 Unpacking g++ (4:14.2.0-1) ...
-#5 15.24 Selecting previously unselected package make.
-#5 15.24 Preparing to unpack .../49-make_4.4.1-2_amd64.deb ...
-#5 15.24 Unpacking make (4.4.1-2) ...
-#5 15.34 Selecting previously unselected package libdpkg-perl.
-#5 15.35 Preparing to unpack .../50-libdpkg-perl_1.22.21_all.deb ...
-#5 15.35 Unpacking libdpkg-perl (1.22.21) ...
-#5 15.45 Selecting previously unselected package patch.
-#5 15.45 Preparing to unpack .../51-patch_2.8-2_amd64.deb ...
-#5 15.45 Unpacking patch (2.8-2) ...
-#5 15.55 Selecting previously unselected package dpkg-dev.
-#5 15.55 Preparing to unpack .../52-dpkg-dev_1.22.21_all.deb ...
-#5 15.55 Unpacking dpkg-dev (1.22.21) ...
-#5 15.67 Selecting previously unselected package build-essential.
-#5 15.67 Preparing to unpack .../53-build-essential_12.12_amd64.deb ...
-#5 15.67 Unpacking build-essential (12.12) ...
-#5 15.77 Selecting previously unselected package libfakeroot:amd64.
-#5 15.77 Preparing to unpack .../54-libfakeroot_1.37.1.1-1_amd64.deb ...
-#5 15.77 Unpacking libfakeroot:amd64 (1.37.1.1-1) ...
-#5 15.86 Selecting previously unselected package fakeroot.
-#5 15.86 Preparing to unpack .../55-fakeroot_1.37.1.1-1_amd64.deb ...
-#5 15.86 Unpacking fakeroot (1.37.1.1-1) ...
-#5 15.95 Selecting previously unselected package libalgorithm-diff-perl.
-#5 15.95 Preparing to unpack .../56-libalgorithm-diff-perl_1.201-1_all.deb ...
-#5 15.95 Unpacking libalgorithm-diff-perl (1.201-1) ...
-#5 16.03 Selecting previously unselected package libalgorithm-diff-xs-perl.
-#5 16.04 Preparing to unpack .../57-libalgorithm-diff-xs-perl_0.04-9_amd64.deb ...
-#5 16.04 Unpacking libalgorithm-diff-xs-perl (0.04-9) ...
-#5 16.12 Selecting previously unselected package libalgorithm-merge-perl.
-#5 16.12 Preparing to unpack .../58-libalgorithm-merge-perl_0.08-5_all.deb ...
-#5 16.13 Unpacking libalgorithm-merge-perl (0.08-5) ...
-#5 16.21 Selecting previously unselected package libfile-fcntllock-perl.
-#5 16.21 Preparing to unpack .../59-libfile-fcntllock-perl_0.22-4+b4_amd64.deb ...
-#5 16.21 Unpacking libfile-fcntllock-perl (0.22-4+b4) ...
-#5 16.30 Selecting previously unselected package manpages-dev.
-#5 16.30 Preparing to unpack .../60-manpages-dev_6.9.1-1_all.deb ...
-#5 16.30 Unpacking manpages-dev (6.9.1-1) ...
-#5 16.46 Selecting previously unselected package sq.
-#5 16.46 Preparing to unpack .../61-sq_1.3.1-2+b1_amd64.deb ...
-#5 16.46 Unpacking sq (1.3.1-2+b1) ...
-#5 16.74 Setting up libgdbm-compat4t64:amd64 (1.24-2) ...
-#5 16.75 Setting up manpages (6.9.1-1) ...
-#5 16.75 Setting up binutils-common:amd64 (2.44-3) ...
-#5 16.75 Setting up linux-libc-dev (6.12.48-1) ...
-#5 16.76 Setting up libctf-nobfd0:amd64 (2.44-3) ...
-#5 16.76 Setting up sq (1.3.1-2+b1) ...
-#5 16.76 Setting up libgomp1:amd64 (14.2.0-19) ...
-#5 16.76 Setting up bzip2 (1.0.8-6) ...
-#5 16.77 Setting up libsframe1:amd64 (2.44-3) ...
-#5 16.77 Setting up libfakeroot:amd64 (1.37.1.1-1) ...
-#5 16.78 Setting up libjansson4:amd64 (2.14-2+b3) ...
-#5 16.78 Setting up fakeroot (1.37.1.1-1) ...
-#5 16.81 update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
-#5 16.81 update-alternatives: warning: skip creation of /usr/share/man/man1/fakeroot.1.gz because associated file /usr/share/man/man1/fakeroot-sysv.1.gz (of link group fakeroot) doesn't exist
-#5 16.81 update-alternatives: warning: skip creation of /usr/share/man/man1/faked.1.gz because associated file /usr/share/man/man1/faked-sysv.1.gz (of link group fakeroot) doesn't exist
-#5 16.81 update-alternatives: warning: skip creation of /usr/share/man/es/man1/fakeroot.1.gz because associated file /usr/share/man/es/man1/fakeroot-sysv.1.gz (of link group fakeroot) doesn't exist
-#5 16.81 update-alternatives: warning: skip creation of /usr/share/man/es/man1/faked.1.gz because associated file /usr/share/man/es/man1/faked-sysv.1.gz (of link group fakeroot) doesn't exist
-#5 16.81 update-alternatives: warning: skip creation of /usr/share/man/fr/man1/fakeroot.1.gz because associated file /usr/share/man/fr/man1/fakeroot-sysv.1.gz (of link group fakeroot) doesn't exist
-#5 16.82 update-alternatives: warning: skip creation of /usr/share/man/fr/man1/faked.1.gz because associated file /usr/share/man/fr/man1/faked-sysv.1.gz (of link group fakeroot) doesn't exist
-#5 16.82 update-alternatives: warning: skip creation of /usr/share/man/sv/man1/fakeroot.1.gz because associated file /usr/share/man/sv/man1/fakeroot-sysv.1.gz (of link group fakeroot) doesn't exist
-#5 16.82 update-alternatives: warning: skip creation of /usr/share/man/sv/man1/faked.1.gz because associated file /usr/share/man/sv/man1/faked-sysv.1.gz (of link group fakeroot) doesn't exist
-#5 16.84 Setting up rpcsvc-proto (1.4.3-1) ...
-#5 16.84 Setting up make (4.4.1-2) ...
-#5 16.84 Setting up libmpfr6:amd64 (4.2.2-1) ...
-#5 16.85 Setting up xz-utils (5.8.1-1) ...
-#5 16.88 update-alternatives: using /usr/bin/xz to provide /usr/bin/lzma (lzma) in auto mode
-#5 16.88 update-alternatives: warning: skip creation of /usr/share/man/man1/lzma.1.gz because associated file /usr/share/man/man1/xz.1.gz (of link group lzma) doesn't exist
-#5 16.88 update-alternatives: warning: skip creation of /usr/share/man/man1/unlzma.1.gz because associated file /usr/share/man/man1/unxz.1.gz (of link group lzma) doesn't exist
-#5 16.88 update-alternatives: warning: skip creation of /usr/share/man/man1/lzcat.1.gz because associated file /usr/share/man/man1/xzcat.1.gz (of link group lzma) doesn't exist
-#5 16.88 update-alternatives: warning: skip creation of /usr/share/man/man1/lzmore.1.gz because associated file /usr/share/man/man1/xzmore.1.gz (of link group lzma) doesn't exist
-#5 16.88 update-alternatives: warning: skip creation of /usr/share/man/man1/lzless.1.gz because associated file /usr/share/man/man1/xzless.1.gz (of link group lzma) doesn't exist
-#5 16.88 update-alternatives: warning: skip creation of /usr/share/man/man1/lzdiff.1.gz because associated file /usr/share/man/man1/xzdiff.1.gz (of link group lzma) doesn't exist
-#5 16.88 update-alternatives: warning: skip creation of /usr/share/man/man1/lzcmp.1.gz because associated file /usr/share/man/man1/xzcmp.1.gz (of link group lzma) doesn't exist
-#5 16.88 update-alternatives: warning: skip creation of /usr/share/man/man1/lzgrep.1.gz because associated file /usr/share/man/man1/xzgrep.1.gz (of link group lzma) doesn't exist
-#5 16.88 update-alternatives: warning: skip creation of /usr/share/man/man1/lzegrep.1.gz because associated file /usr/share/man/man1/xzegrep.1.gz (of link group lzma) doesn't exist
-#5 16.88 update-alternatives: warning: skip creation of /usr/share/man/man1/lzfgrep.1.gz because associated file /usr/share/man/man1/xzfgrep.1.gz (of link group lzma) doesn't exist
-#5 16.89 Setting up libquadmath0:amd64 (14.2.0-19) ...
-#5 16.89 Setting up libmpc3:amd64 (1.3.1-1+b3) ...
-#5 16.89 Setting up libatomic1:amd64 (14.2.0-19) ...
-#5 16.90 Setting up patch (2.8-2) ...
-#5 16.90 Setting up libubsan1:amd64 (14.2.0-19) ...
-#5 16.90 Setting up perl-modules-5.40 (5.40.1-6) ...
-#5 16.91 Setting up libhwasan0:amd64 (14.2.0-19) ...
-#5 16.91 Setting up libcrypt-dev:amd64 (1:4.4.38-1) ...
-#5 16.97 Setting up libasan8:amd64 (14.2.0-19) ...
-#5 16.97 Setting up libtsan2:amd64 (14.2.0-19) ...
-#5 16.98 Setting up libbinutils:amd64 (2.44-3) ...
-#5 16.98 Setting up libisl23:amd64 (0.27-1) ...
-#5 16.99 Setting up libc-dev-bin (2.41-12) ...
-#5 16.99 Setting up libcc1-0:amd64 (14.2.0-19) ...
-#5 16.99 Setting up liblocale-gettext-perl (1.07-7+b1) ...
-#5 17.00 Setting up liblsan0:amd64 (14.2.0-19) ...
-#5 17.00 Setting up libitm1:amd64 (14.2.0-19) ...
-#5 17.00 Setting up libctf0:amd64 (2.44-3) ...
-#5 17.01 Setting up manpages-dev (6.9.1-1) ...
-#5 17.01 Setting up libperl5.40:amd64 (5.40.1-6) ...
-#5 17.01 Setting up perl (5.40.1-6) ...
-#5 17.06 Setting up libgprofng0:amd64 (2.44-3) ...
-#5 17.07 Setting up cpp-14-x86-64-linux-gnu (14.2.0-19) ...
-#5 17.07 Setting up libdpkg-perl (1.22.21) ...
-#5 17.07 Setting up cpp-14 (14.2.0-19) ...
-#5 17.08 Setting up libc6-dev:amd64 (2.41-12) ...
-#5 17.08 Setting up libgcc-14-dev:amd64 (14.2.0-19) ...
-#5 17.09 Setting up libstdc++-14-dev:amd64 (14.2.0-19) ...
-#5 17.09 Setting up binutils-x86-64-linux-gnu (2.44-3) ...
-#5 17.09 Setting up cpp-x86-64-linux-gnu (4:14.2.0-1) ...
-#5 17.10 Setting up libfile-fcntllock-perl (0.22-4+b4) ...
-#5 17.10 Setting up libalgorithm-diff-perl (1.201-1) ...
-#5 17.11 Setting up binutils (2.44-3) ...
-#5 17.11 Setting up dpkg-dev (1.22.21) ...
-#5 17.11 Setting up cpp (4:14.2.0-1) ...
-#5 17.19 Setting up gcc-14-x86-64-linux-gnu (14.2.0-19) ...
-#5 17.20 Setting up libalgorithm-diff-xs-perl (0.04-9) ...
-#5 17.20 Setting up libalgorithm-merge-perl (0.08-5) ...
-#5 17.20 Setting up gcc-x86-64-linux-gnu (4:14.2.0-1) ...
-#5 17.21 Setting up gcc-14 (14.2.0-19) ...
-#5 17.21 Setting up g++-14-x86-64-linux-gnu (14.2.0-19) ...
-#5 17.22 Setting up g++-x86-64-linux-gnu (4:14.2.0-1) ...
-#5 17.22 Setting up g++-14 (14.2.0-19) ...
-#5 17.22 Setting up gcc (4:14.2.0-1) ...
-#5 17.29 Setting up g++ (4:14.2.0-1) ...
-#5 17.32 update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
-#5 17.33 Setting up build-essential (12.12) ...
-#5 17.33 Processing triggers for libc-bin (2.41-12) ...
-#5 DONE 17.7s
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
 
-#6 [3/4] RUN python -m pip install --upgrade pip &&     python -m venv /opt/celltypist &&     pip install wheel --no-cache-dir &&     pip install celltypist --no-cache-dir &&     pip install bbknn &&     celltypist --update-models
-#6 1.549 Requirement already satisfied: pip in /usr/local/lib/python3.9/site-packages (23.0.1)
-#6 1.738 Collecting pip
-#6 1.843   Downloading pip-25.2-py3-none-any.whl (1.8 MB)
-#6 1.967      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 15.0 MB/s eta 0:00:00
-#6 2.018 Installing collected packages: pip
-#6 2.018   Attempting uninstall: pip
-#6 2.019     Found existing installation: pip 23.0.1
-#6 2.123     Uninstalling pip-23.0.1:
-#6 2.205       Successfully uninstalled pip-23.0.1
-#6 2.775 Successfully installed pip-25.2
-#6 2.775 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
-#6 6.049 Collecting wheel
-#6 6.128   Downloading wheel-0.45.1-py3-none-any.whl (72 kB)
-#6 6.154      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 3.3 MB/s eta 0:00:00
-#6 6.188 Installing collected packages: wheel
-#6 6.236 Successfully installed wheel-0.45.1
-#6 6.348 
-#6 6.348 [notice] A new release of pip is available: 23.0.1 -> 25.2
-#6 6.348 [notice] To update, run: pip install --upgrade pip
-#6 6.870 Collecting celltypist
-#6 7.076   Downloading celltypist-1.7.1-py3-none-any.whl (7.3 MB)
-#6 7.321      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.3/7.3 MB 31.2 MB/s eta 0:00:00
-#6 7.704 Collecting pandas>=1.0.5
-#6 7.726   Downloading pandas-2.3.3-cp39-cp39-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.8 MB)
-#6 8.107      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 34.4 MB/s eta 0:00:00
-#6 8.265 Collecting leidenalg>=0.9.0
-#6 8.288   Downloading leidenalg-0.10.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
-#6 8.343      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 37.4 MB/s eta 0:00:00
-#6 8.413 Collecting requests>=2.23.0
-#6 8.434   Downloading requests-2.32.5-py3-none-any.whl (64 kB)
-#6 8.437      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.7/64.7 kB 227.7 MB/s eta 0:00:00
-#6 8.933 Collecting numpy>=1.19.0
-#6 8.955   Downloading numpy-2.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (19.5 MB)
-#6 9.532      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 19.5/19.5 MB 35.4 MB/s eta 0:00:00
-#6 9.841 Collecting scikit-learn>=0.24.1
-#6 9.863   Downloading scikit_learn-1.6.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.5 MB)
-#6 10.31      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.5/13.5 MB 30.3 MB/s eta 0:00:00
-#6 10.43 Collecting click>=7.1.2
-#6 10.46   Downloading click-8.1.8-py3-none-any.whl (98 kB)
-#6 10.46      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.2/98.2 kB 89.0 MB/s eta 0:00:00
-#6 10.51 Collecting scanpy>=1.7.0
-#6 10.53   Downloading scanpy-1.10.3-py3-none-any.whl (2.1 MB)
-#6 10.60      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 31.7 MB/s eta 0:00:00
-#6 10.66 Collecting openpyxl>=3.0.4
-#6 10.68   Downloading openpyxl-3.1.5-py2.py3-none-any.whl (250 kB)
-#6 10.69      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 250.9/250.9 kB 44.3 MB/s eta 0:00:00
-#6 10.84 Collecting igraph<0.12,>=0.10.0
-#6 10.87   Downloading igraph-0.11.9-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.4 MB)
-#6 11.02      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 28.9 MB/s eta 0:00:00
-#6 11.07 Collecting et-xmlfile
-#6 11.09   Downloading et_xmlfile-2.0.0-py3-none-any.whl (18 kB)
-#6 11.25 Collecting pytz>=2020.1
-#6 11.27   Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
-#6 11.28      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 509.2/509.2 kB 34.9 MB/s eta 0:00:00
-#6 11.32 Collecting python-dateutil>=2.8.2
-#6 11.34   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
-#6 11.35      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 kB 29.8 MB/s eta 0:00:00
-#6 11.39 Collecting tzdata>=2022.7
-#6 11.41   Downloading tzdata-2025.2-py2.py3-none-any.whl (347 kB)
-#6 11.42      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 347.8/347.8 kB 52.2 MB/s eta 0:00:00
-#6 11.65 Collecting charset_normalizer<4,>=2
-#6 11.67   Downloading charset_normalizer-3.4.3-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (152 kB)
-#6 11.68      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 152.5/152.5 kB 62.7 MB/s eta 0:00:00
-#6 11.72 Collecting certifi>=2017.4.17
-#6 11.74   Downloading certifi-2025.10.5-py3-none-any.whl (163 kB)
-#6 11.75      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 163.3/163.3 kB 76.4 MB/s eta 0:00:00
-#6 11.78 Collecting idna<4,>=2.5
-#6 11.80   Downloading idna-3.10-py3-none-any.whl (70 kB)
-#6 11.81      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.4/70.4 kB 33.5 MB/s eta 0:00:00
-#6 11.88 Collecting urllib3<3,>=1.21.1
-#6 11.90   Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
-#6 11.90      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 129.8/129.8 kB 88.4 MB/s eta 0:00:00
-#6 12.23 Collecting numba>=0.56
-#6 12.26   Downloading numba-0.60.0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.7 MB)
-#6 12.39      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 27.9 MB/s eta 0:00:00
-#6 12.44 Collecting patsy
-#6 12.46   Downloading patsy-1.0.1-py2.py3-none-any.whl (232 kB)
-#6 12.47      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 232.9/232.9 kB 60.2 MB/s eta 0:00:00
-#6 12.56 Collecting tqdm
-#6 12.58   Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
-#6 12.59      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 249.7 MB/s eta 0:00:00
-#6 12.61 Collecting pynndescent>=0.5
-#6 12.64   Downloading pynndescent-0.5.13-py3-none-any.whl (56 kB)
-#6 12.64      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.9/56.9 kB 242.8 MB/s eta 0:00:00
-#6 12.69 Collecting joblib
-#6 12.71   Downloading joblib-1.5.2-py3-none-any.whl (308 kB)
-#6 12.72      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 308.4/308.4 kB 56.7 MB/s eta 0:00:00
-#6 12.75 Collecting legacy-api-wrap>=1.4
-#6 12.77   Downloading legacy_api_wrap-1.4.1-py3-none-any.whl (10.0 kB)
-#6 12.82 Collecting natsort
-#6 12.84   Downloading natsort-8.4.0-py3-none-any.whl (38 kB)
-#6 12.89 Collecting networkx>=2.7
-#6 12.91   Downloading networkx-3.2.1-py3-none-any.whl (1.6 MB)
-#6 12.97      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 28.4 MB/s eta 0:00:00
-#6 13.02 Collecting seaborn>=0.13
-#6 13.04   Downloading seaborn-0.13.2-py3-none-any.whl (294 kB)
-#6 13.05      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 294.9/294.9 kB 31.7 MB/s eta 0:00:00
-#6 13.43 Collecting matplotlib>=3.6
-#6 13.46   Downloading matplotlib-3.9.4-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (8.3 MB)
-#6 13.75      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.3/8.3 MB 28.4 MB/s eta 0:00:00
-#6 14.14 Collecting scipy>=1.8
-#6 14.16   Downloading scipy-1.13.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (38.6 MB)
-#6 15.59      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.6/38.6 MB 29.8 MB/s eta 0:00:00
-#6 15.86 Collecting statsmodels>=0.13
-#6 15.89   Downloading statsmodels-0.14.5-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (10.7 MB)
-#6 16.25      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.7/10.7 MB 29.9 MB/s eta 0:00:00
-#6 16.35 Collecting packaging>=21.3
-#6 16.37   Downloading packaging-25.0-py3-none-any.whl (66 kB)
-#6 16.38      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.5/66.5 kB 201.9 MB/s eta 0:00:00
-#6 16.40 Collecting session-info
-#6 16.42   Downloading session_info-1.0.1-py3-none-any.whl (9.1 kB)
-#6 16.47 Collecting anndata>=0.8
-#6 16.49   Downloading anndata-0.10.9-py3-none-any.whl (128 kB)
-#6 16.50      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 129.0/129.0 kB 54.6 MB/s eta 0:00:00
-#6 16.61 Collecting h5py>=3.1
-#6 16.63   Downloading h5py-3.14.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.6 MB)
-#6 16.78      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 30.4 MB/s eta 0:00:00
-#6 16.83 Collecting get-annotations
-#6 16.85   Downloading get_annotations-0.1.2-py3-none-any.whl (4.5 kB)
-#6 16.88 Collecting umap-learn!=0.5.0,>=0.5
-#6 16.90   Downloading umap_learn-0.5.9.post2-py3-none-any.whl (90 kB)
-#6 16.90      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.1/90.1 kB 132.0 MB/s eta 0:00:00
-#6 17.01 Collecting threadpoolctl>=3.1.0
-#6 17.03   Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
-#6 17.09 Collecting exceptiongroup
-#6 17.11   Downloading exceptiongroup-1.3.0-py3-none-any.whl (16 kB)
-#6 17.14 Collecting array-api-compat!=1.5,>1.4
-#6 17.16   Downloading array_api_compat-1.11.2-py3-none-any.whl (53 kB)
-#6 17.16      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 53.1/53.1 kB 174.8 MB/s eta 0:00:00
-#6 17.26 Collecting texttable>=1.6.2
-#6 17.28   Downloading texttable-1.7.0-py2.py3-none-any.whl (10 kB)
-#6 17.36 Collecting pyparsing>=2.3.1
-#6 17.38   Downloading pyparsing-3.2.5-py3-none-any.whl (113 kB)
-#6 17.39      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 113.9/113.9 kB 37.4 MB/s eta 0:00:00
-#6 17.79 Collecting fonttools>=4.22.0
-#6 17.81   Downloading fonttools-4.60.1-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.8 MB)
-#6 18.00      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 26.0 MB/s eta 0:00:00
-#6 18.24 Collecting kiwisolver>=1.3.1
-#6 18.26   Downloading kiwisolver-1.4.7-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.6 MB)
-#6 18.32      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 28.7 MB/s eta 0:00:00
-#6 18.39 Collecting importlib-resources>=3.2.0
-#6 18.41   Downloading importlib_resources-6.5.2-py3-none-any.whl (37 kB)
-#6 18.84 Collecting pillow>=8
-#6 18.86   Downloading pillow-11.3.0-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.6 MB)
-#6 19.10      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 28.6 MB/s eta 0:00:00
-#6 19.16 Collecting cycler>=0.10
-#6 19.18   Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
-#6 19.37 Collecting contourpy>=1.0.1
-#6 19.40   Downloading contourpy-1.3.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (321 kB)
-#6 19.41      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 321.9/321.9 kB 26.0 MB/s eta 0:00:00
-#6 19.61 Collecting llvmlite<0.44,>=0.43.0dev0
-#6 19.63   Downloading llvmlite-0.43.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (43.9 MB)
-#6 21.38      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.9/43.9 MB 19.5 MB/s eta 0:00:00
-#6 21.60 Collecting six>=1.5
-#6 21.62   Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
-#6 21.90 Collecting stdlib_list
-#6 21.92   Downloading stdlib_list-0.11.1-py3-none-any.whl (83 kB)
-#6 21.93      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 83.6/83.6 kB 8.9 MB/s eta 0:00:00
-#6 22.07 Collecting zipp>=3.1.0
-#6 22.09   Downloading zipp-3.23.0-py3-none-any.whl (10 kB)
-#6 22.21 Collecting typing-extensions>=4.6.0
-#6 22.23   Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
-#6 22.24      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.6/44.6 kB 194.5 MB/s eta 0:00:00
-#6 22.79 Installing collected packages: texttable, pytz, zipp, urllib3, tzdata, typing-extensions, tqdm, threadpoolctl, stdlib_list, six, pyparsing, pillow, packaging, numpy, networkx, natsort, llvmlite, legacy-api-wrap, kiwisolver, joblib, igraph, idna, get-annotations, fonttools, et-xmlfile, cycler, click, charset_normalizer, certifi, array-api-compat, session-info, scipy, requests, python-dateutil, patsy, openpyxl, numba, leidenalg, importlib-resources, h5py, exceptiongroup, contourpy, scikit-learn, pandas, matplotlib, statsmodels, seaborn, pynndescent, anndata, umap-learn, scanpy, celltypist
-#6 40.25 Successfully installed anndata-0.10.9 array-api-compat-1.11.2 celltypist-1.7.1 certifi-2025.10.5 charset_normalizer-3.4.3 click-8.1.8 contourpy-1.3.0 cycler-0.12.1 et-xmlfile-2.0.0 exceptiongroup-1.3.0 fonttools-4.60.1 get-annotations-0.1.2 h5py-3.14.0 idna-3.10 igraph-0.11.9 importlib-resources-6.5.2 joblib-1.5.2 kiwisolver-1.4.7 legacy-api-wrap-1.4.1 leidenalg-0.10.2 llvmlite-0.43.0 matplotlib-3.9.4 natsort-8.4.0 networkx-3.2.1 numba-0.60.0 numpy-2.0.2 openpyxl-3.1.5 packaging-25.0 pandas-2.3.3 patsy-1.0.1 pillow-11.3.0 pynndescent-0.5.13 pyparsing-3.2.5 python-dateutil-2.9.0.post0 pytz-2025.2 requests-2.32.5 scanpy-1.10.3 scikit-learn-1.6.1 scipy-1.13.1 seaborn-0.13.2 session-info-1.0.1 six-1.17.0 statsmodels-0.14.5 stdlib_list-0.11.1 texttable-1.7.0 threadpoolctl-3.6.0 tqdm-4.67.1 typing-extensions-4.15.0 tzdata-2025.2 umap-learn-0.5.9.post2 urllib3-2.5.0 zipp-3.23.0
-#6 40.38 
-#6 40.38 [notice] A new release of pip is available: 23.0.1 -> 25.2
-#6 40.38 [notice] To update, run: pip install --upgrade pip
-#6 41.06 Collecting bbknn
-#6 41.17   Downloading bbknn-1.6.0-py3-none-any.whl (14 kB)
-#6 41.80 Collecting Cython
-#6 41.83   Downloading cython-3.1.4-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.4 MB)
-#6 42.05      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.4/3.4 MB 16.4 MB/s eta 0:00:00
-#6 42.10 Collecting annoy
-#6 42.12   Downloading annoy-1.17.3.tar.gz (647 kB)
-#6 42.15      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 647.5/647.5 kB 26.4 MB/s eta 0:00:00
-#6 42.16   Preparing metadata (setup.py): started
-#6 43.10   Preparing metadata (setup.py): finished with status 'done'
-#6 43.10 Requirement already satisfied: pynndescent in /opt/celltypist/lib/python3.9/site-packages (from bbknn) (0.5.13)
-#6 43.10 Requirement already satisfied: numpy in /opt/celltypist/lib/python3.9/site-packages (from bbknn) (2.0.2)
-#6 43.11 Requirement already satisfied: pandas in /opt/celltypist/lib/python3.9/site-packages (from bbknn) (2.3.3)
-#6 43.11 Requirement already satisfied: umap-learn in /opt/celltypist/lib/python3.9/site-packages (from bbknn) (0.5.9.post2)
-#6 43.11 Requirement already satisfied: scikit-learn>=1.0.2 in /opt/celltypist/lib/python3.9/site-packages (from bbknn) (1.6.1)
-#6 43.11 Requirement already satisfied: scipy>=1.6.0 in /opt/celltypist/lib/python3.9/site-packages (from bbknn) (1.13.1)
-#6 43.15 Requirement already satisfied: threadpoolctl>=3.1.0 in /opt/celltypist/lib/python3.9/site-packages (from scikit-learn>=1.0.2->bbknn) (3.6.0)
-#6 43.15 Requirement already satisfied: joblib>=1.2.0 in /opt/celltypist/lib/python3.9/site-packages (from scikit-learn>=1.0.2->bbknn) (1.5.2)
-#6 43.25 Requirement already satisfied: python-dateutil>=2.8.2 in /opt/celltypist/lib/python3.9/site-packages (from pandas->bbknn) (2.9.0.post0)
-#6 43.25 Requirement already satisfied: tzdata>=2022.7 in /opt/celltypist/lib/python3.9/site-packages (from pandas->bbknn) (2025.2)
-#6 43.25 Requirement already satisfied: pytz>=2020.1 in /opt/celltypist/lib/python3.9/site-packages (from pandas->bbknn) (2025.2)
-#6 43.26 Requirement already satisfied: numba>=0.51.2 in /opt/celltypist/lib/python3.9/site-packages (from pynndescent->bbknn) (0.60.0)
-#6 43.26 Requirement already satisfied: llvmlite>=0.30 in /opt/celltypist/lib/python3.9/site-packages (from pynndescent->bbknn) (0.43.0)
-#6 43.27 Requirement already satisfied: tqdm in /opt/celltypist/lib/python3.9/site-packages (from umap-learn->bbknn) (4.67.1)
-#6 43.28 Requirement already satisfied: six>=1.5 in /opt/celltypist/lib/python3.9/site-packages (from python-dateutil>=2.8.2->pandas->bbknn) (1.17.0)
-#6 43.29 Building wheels for collected packages: annoy
-#6 43.29   Building wheel for annoy (setup.py): started
-#6 48.64   Building wheel for annoy (setup.py): finished with status 'done'
-#6 48.64   Created wheel for annoy: filename=annoy-1.17.3-cp39-cp39-linux_x86_64.whl size=537276 sha256=7b4b1cb50ae131454cba320f29ea3a962427f77471d9da707979ddec80be0623
-#6 48.64   Stored in directory: /root/.cache/pip/wheels/09/a9/54/37478e65995fe712f7da465749da9ddb21db6b1a599d591ac7
-#6 48.64 Successfully built annoy
-#6 48.93 Installing collected packages: annoy, Cython, bbknn
-#6 49.48 Successfully installed Cython-3.1.4 annoy-1.17.3 bbknn-1.6.0
-#6 49.59 
-#6 49.59 [notice] A new release of pip is available: 23.0.1 -> 25.2
-#6 49.59 [notice] To update, run: pip install --upgrade pip
-#6 51.84 📜 Retrieving model list from server https://celltypist.cog.sanger.ac.uk/models/models.json
-#6 52.49 📚 Total models in list: 56
-#6 52.50 📂 Storing models in /opt/celltypist/data/models
-#6 52.50 💾 Downloading model [1/56]: Immune_All_Low.pkl
-#6 53.75 💾 Downloading model [2/56]: Immune_All_High.pkl
-#6 54.60 💾 Downloading model [3/56]: Adult_COVID19_PBMC.pkl
-#6 55.39 💾 Downloading model [4/56]: Adult_CynomolgusMacaque_Hippocampus.pkl
-#6 56.22 💾 Downloading model [5/56]: Adult_Human_MTG.pkl
-#6 57.45 💾 Downloading model [6/56]: Adult_Human_PancreaticIslet.pkl
-#6 58.14 💾 Downloading model [7/56]: Adult_Human_PrefrontalCortex.pkl
-#6 59.34 💾 Downloading model [8/56]: Adult_Human_Skin.pkl
-#6 60.11 💾 Downloading model [9/56]: Adult_Human_Vascular.pkl
-#6 61.27 💾 Downloading model [10/56]: Adult_Mouse_Gut.pkl
-#6 62.93 💾 Downloading model [11/56]: Adult_Mouse_OlfactoryBulb.pkl
-#6 63.78 💾 Downloading model [12/56]: Adult_Pig_Hippocampus.pkl
-#6 64.49 💾 Downloading model [13/56]: Adult_RhesusMacaque_Hippocampus.pkl
-#6 65.17 💾 Downloading model [14/56]: Adult_cHSPCs_Illumina.pkl
-#6 65.85 💾 Downloading model [15/56]: Adult_cHSPCs_Ultima.pkl
-#6 66.53 💾 Downloading model [16/56]: Autopsy_COVID19_Lung.pkl
-#6 67.30 💾 Downloading model [17/56]: COVID19_HumanChallenge_Blood.pkl
-#6 68.32 💾 Downloading model [18/56]: COVID19_Immune_Landscape.pkl
-#6 69.20 💾 Downloading model [19/56]: Cells_Adult_Breast.pkl
-#6 70.07 💾 Downloading model [20/56]: Cells_Fetal_Lung.pkl
-#6 72.08 💾 Downloading model [21/56]: Cells_Human_Tonsil.pkl
-#6 73.66 💾 Downloading model [22/56]: Cells_Intestinal_Tract.pkl
-#6 75.12 💾 Downloading model [23/56]: Cells_Lung_Airway.pkl
-#6 76.15 💾 Downloading model [24/56]: Developing_Human_Brain.pkl
-#6 76.92 💾 Downloading model [25/56]: Developing_Human_Gonads.pkl
-#6 77.78 💾 Downloading model [26/56]: Developing_Human_Hippocampus.pkl
-#6 78.47 💾 Downloading model [27/56]: Developing_Human_Organs.pkl
-#6 79.23 💾 Downloading model [28/56]: Developing_Human_Thymus.pkl
-#6 80.48 💾 Downloading model [29/56]: Developing_Mouse_Brain.pkl
-#6 83.00 💾 Downloading model [30/56]: Developing_Mouse_Hippocampus.pkl
-#6 83.70 💾 Downloading model [31/56]: Fetal_Human_AdrenalGlands.pkl
-#6 84.29 💾 Downloading model [32/56]: Fetal_Human_Pancreas.pkl
-#6 85.25 💾 Downloading model [33/56]: Fetal_Human_Pituitary.pkl
-#6 86.04 💾 Downloading model [34/56]: Fetal_Human_Retina.pkl
-#6 86.99 💾 Downloading model [35/56]: Fetal_Human_Skin.pkl
-#6 87.68 💾 Downloading model [36/56]: Healthy_Adult_Heart.pkl
-#6 88.57 💾 Downloading model [37/56]: Healthy_COVID19_PBMC.pkl
-#6 89.35 💾 Downloading model [38/56]: Healthy_Human_Liver.pkl
-#6 90.03 💾 Downloading model [39/56]: Healthy_Mouse_Liver.pkl
-#6 90.71 💾 Downloading model [40/56]: Human_AdultAged_Hippocampus.pkl
-#6 91.40 💾 Downloading model [41/56]: Human_Colorectal_Cancer.pkl
-#6 92.24 💾 Downloading model [42/56]: Human_Developmental_Retina.pkl
-#6 92.92 💾 Downloading model [43/56]: Human_Embryonic_YolkSac.pkl
-#6 93.76 💾 Downloading model [44/56]: Human_Endometrium_Atlas.pkl
-#6 94.54 💾 Downloading model [45/56]: Human_IPF_Lung.pkl
-#6 95.49 💾 Downloading model [46/56]: Human_Longitudinal_Hippocampus.pkl
-#6 96.18 💾 Downloading model [47/56]: Human_Lung_Atlas.pkl
-#6 97.12 💾 Downloading model [48/56]: Human_PF_Lung.pkl
-#6 97.90 💾 Downloading model [49/56]: Human_Placenta_Decidua.pkl
-#6 98.69 💾 Downloading model [50/56]: Lethal_COVID19_Lung.pkl
-#6 99.47 💾 Downloading model [51/56]: Mouse_Dentate_Gyrus.pkl
-#6 100.3 💾 Downloading model [52/56]: Mouse_Isocortex_Hippocampus.pkl
-#6 101.1 💾 Downloading model [53/56]: Mouse_Postnatal_DentateGyrus.pkl
-#6 102.0 💾 Downloading model [54/56]: Mouse_Whole_Brain.pkl
-#6 104.5 💾 Downloading model [55/56]: Nuclei_Lung_Airway.pkl
-#6 105.7 💾 Downloading model [56/56]: Pan_Fetal_Human.pkl
-#6 DONE 107.6s
+#5 [1/4] FROM docker.io/library/python:3.9-slim@sha256:151b796af055298f244bc4d203bc19e19b0e63c8aa26c4fed2fc6809ea9b7caf
+#5 DONE 0.0s
 
-#7 [4/4] RUN apt-get install -y procps && rm -rf /var/lib/apt/lists/*
-#7 0.200 Reading package lists...
-#7 0.633 Building dependency tree...
-#7 0.727 Reading state information...
-#7 1.084 The following additional packages will be installed:
-#7 1.085   libproc2-0 linux-sysctl-defaults psmisc
-#7 1.135 The following NEW packages will be installed:
-#7 1.136   libproc2-0 linux-sysctl-defaults procps psmisc
-#7 1.368 0 upgraded, 4 newly installed, 0 to remove and 3 not upgraded.
-#7 1.368 Need to get 1220 kB of archives.
-#7 1.368 After this operation, 3687 kB of additional disk space will be used.
-#7 1.368 Get:1 http://deb.debian.org/debian trixie/main amd64 linux-sysctl-defaults all 4.12 [5624 B]
-#7 1.403 Get:2 http://deb.debian.org/debian trixie/main amd64 libproc2-0 amd64 2:4.0.4-9 [65.6 kB]
-#7 1.426 Get:3 http://deb.debian.org/debian trixie/main amd64 procps amd64 2:4.0.4-9 [882 kB]
-#7 1.504 Get:4 http://deb.debian.org/debian trixie/main amd64 psmisc amd64 23.7-2 [267 kB]
-#7 1.791 debconf: unable to initialize frontend: Dialog
-#7 1.791 debconf: (TERM is not set, so the dialog frontend is not usable.)
-#7 1.791 debconf: falling back to frontend: Readline
-#7 1.842 debconf: unable to initialize frontend: Readline
-#7 1.842 debconf: (This frontend requires a controlling tty.)
-#7 1.842 debconf: falling back to frontend: Teletype
-#7 1.890 debconf: unable to initialize frontend: Teletype
-#7 1.890 debconf: (This frontend requires a controlling tty.)
-#7 1.890 debconf: falling back to frontend: Noninteractive
-#7 2.437 Fetched 1220 kB in 0s (3401 kB/s)
-#7 2.512 Selecting previously unselected package linux-sysctl-defaults.
-#7 2.512 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 16648 files and directories currently installed.)
-#7 2.518 Preparing to unpack .../linux-sysctl-defaults_4.12_all.deb ...
-#7 2.520 Unpacking linux-sysctl-defaults (4.12) ...
-#7 2.613 Selecting previously unselected package libproc2-0:amd64.
-#7 2.614 Preparing to unpack .../libproc2-0_2%3a4.0.4-9_amd64.deb ...
-#7 2.616 Unpacking libproc2-0:amd64 (2:4.0.4-9) ...
-#7 2.708 Selecting previously unselected package procps.
-#7 2.709 Preparing to unpack .../procps_2%3a4.0.4-9_amd64.deb ...
-#7 2.767 Unpacking procps (2:4.0.4-9) ...
-#7 2.880 Selecting previously unselected package psmisc.
-#7 2.881 Preparing to unpack .../psmisc_23.7-2_amd64.deb ...
-#7 2.882 Unpacking psmisc (23.7-2) ...
-#7 2.958 Setting up psmisc (23.7-2) ...
-#7 2.965 Setting up linux-sysctl-defaults (4.12) ...
-#7 2.969 Setting up libproc2-0:amd64 (2:4.0.4-9) ...
-#7 2.972 Setting up procps (2:4.0.4-9) ...
-#7 3.115 Processing triggers for libc-bin (2.41-12) ...
-#7 DONE 3.2s
+#6 [2/4] RUN apt-get update &&     apt-get install -y build-essential
+#6 CACHED
 
-#8 exporting to image
-#8 exporting layers
-#8 exporting layers 1.6s done
-#8 writing image sha256:80a7537b97a52015e5c42d9d822c6f8f7f0eb71c39f624dbb56ff3ccaa178a9e
-#8 writing image sha256:80a7537b97a52015e5c42d9d822c6f8f7f0eb71c39f624dbb56ff3ccaa178a9e done
-#8 naming to docker.io/ncarrut/celltypist_nextflow:update_bbknn done
-#8 DONE 1.6s
+#7 [3/4] RUN python -m pip install --upgrade pip &&     python -m venv /opt/celltypist &&     pip install wheel --no-cache-dir &&     pip install celltypist --no-cache-dir &&     pip install bbknn --no-cache-dir &&     pip install -U scvi-tools &&     celltypist --update-models
+#7 1.672 Requirement already satisfied: pip in /usr/local/lib/python3.9/site-packages (23.0.1)
+#7 1.880 Collecting pip
+#7 2.016   Downloading pip-25.2-py3-none-any.whl (1.8 MB)
+#7 2.147      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 14.1 MB/s eta 0:00:00
+#7 2.200 Installing collected packages: pip
+#7 2.200   Attempting uninstall: pip
+#7 2.201     Found existing installation: pip 23.0.1
+#7 2.303     Uninstalling pip-23.0.1:
+#7 2.387       Successfully uninstalled pip-23.0.1
+#7 3.005 Successfully installed pip-25.2
+#7 3.006 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#7 6.372 Collecting wheel
+#7 6.449   Downloading wheel-0.45.1-py3-none-any.whl (72 kB)
+#7 6.474      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 3.5 MB/s eta 0:00:00
+#7 6.506 Installing collected packages: wheel
+#7 6.552 Successfully installed wheel-0.45.1
+#7 6.689 
+#7 6.689 [notice] A new release of pip is available: 23.0.1 -> 25.2
+#7 6.689 [notice] To update, run: pip install --upgrade pip
+#7 7.206 Collecting celltypist
+#7 7.290   Downloading celltypist-1.7.1-py3-none-any.whl (7.3 MB)
+#7 7.626      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.3/7.3 MB 22.5 MB/s eta 0:00:00
+#7 7.745 Collecting requests>=2.23.0
+#7 7.768   Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+#7 7.771      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.7/64.7 kB 256.1 MB/s eta 0:00:00
+#7 8.100 Collecting pandas>=1.0.5
+#7 8.125   Downloading pandas-2.3.3-cp39-cp39-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.8 MB)
+#7 8.484      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 35.5 MB/s eta 0:00:00
+#7 9.064 Collecting numpy>=1.19.0
+#7 9.090   Downloading numpy-2.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (19.5 MB)
+#7 9.651      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 19.5/19.5 MB 33.9 MB/s eta 0:00:00
+#7 9.775 Collecting openpyxl>=3.0.4
+#7 9.798   Downloading openpyxl-3.1.5-py2.py3-none-any.whl (250 kB)
+#7 9.806      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 250.9/250.9 kB 40.7 MB/s eta 0:00:00
+#7 9.849 Collecting click>=7.1.2
+#7 9.872   Downloading click-8.1.8-py3-none-any.whl (98 kB)
+#7 9.875      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.2/98.2 kB 219.5 MB/s eta 0:00:00
+#7 9.946 Collecting scanpy>=1.7.0
+#7 10.06   Downloading scanpy-1.10.3-py3-none-any.whl (2.1 MB)
+#7 10.12      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 36.0 MB/s eta 0:00:00
+#7 10.24 Collecting leidenalg>=0.9.0
+#7 10.26   Downloading leidenalg-0.10.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+#7 10.32      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 37.5 MB/s eta 0:00:00
+#7 10.57 Collecting scikit-learn>=0.24.1
+#7 10.60   Downloading scikit_learn-1.6.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.5 MB)
+#7 10.99      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.5/13.5 MB 34.6 MB/s eta 0:00:00
+#7 11.21 Collecting igraph<0.12,>=0.10.0
+#7 11.23   Downloading igraph-0.11.9-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.4 MB)
+#7 11.37      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 32.7 MB/s eta 0:00:00
+#7 11.42 Collecting et-xmlfile
+#7 11.44   Downloading et_xmlfile-2.0.0-py3-none-any.whl (18 kB)
+#7 11.56 Collecting python-dateutil>=2.8.2
+#7 11.59   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+#7 11.59      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 kB 58.5 MB/s eta 0:00:00
+#7 11.63 Collecting tzdata>=2022.7
+#7 11.65   Downloading tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+#7 11.66      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 347.8/347.8 kB 53.0 MB/s eta 0:00:00
+#7 11.73 Collecting pytz>=2020.1
+#7 11.76   Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+#7 11.77      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 509.2/509.2 kB 58.7 MB/s eta 0:00:00
+#7 11.82 Collecting certifi>=2017.4.17
+#7 11.85   Downloading certifi-2025.10.5-py3-none-any.whl (163 kB)
+#7 11.86      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 163.3/163.3 kB 18.0 MB/s eta 0:00:00
+#7 12.08 Collecting charset_normalizer<4,>=2
+#7 12.14   Downloading charset_normalizer-3.4.3-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (152 kB)
+#7 12.14      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 152.5/152.5 kB 109.8 MB/s eta 0:00:00
+#7 12.22 Collecting urllib3<3,>=1.21.1
+#7 12.24   Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+#7 12.24      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 129.8/129.8 kB 33.9 MB/s eta 0:00:00
+#7 12.28 Collecting idna<4,>=2.5
+#7 12.30   Downloading idna-3.10-py3-none-any.whl (70 kB)
+#7 12.30      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.4/70.4 kB 215.0 MB/s eta 0:00:00
+#7 12.41 Collecting umap-learn!=0.5.0,>=0.5
+#7 12.43   Downloading umap_learn-0.5.9.post2-py3-none-any.whl (90 kB)
+#7 12.44      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.1/90.1 kB 138.3 MB/s eta 0:00:00
+#7 12.52 Collecting tqdm
+#7 12.60   Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+#7 12.60      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 193.6 MB/s eta 0:00:00
+#7 12.66 Collecting natsort
+#7 12.68   Downloading natsort-8.4.0-py3-none-any.whl (38 kB)
+#7 12.74 Collecting anndata>=0.8
+#7 12.77   Downloading anndata-0.10.9-py3-none-any.whl (128 kB)
+#7 12.77      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 129.0/129.0 kB 55.2 MB/s eta 0:00:00
+#7 12.81 Collecting get-annotations
+#7 12.83   Downloading get_annotations-0.1.2-py3-none-any.whl (4.5 kB)
+#7 13.17 Collecting scipy>=1.8
+#7 13.20   Downloading scipy-1.13.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (38.6 MB)
+#7 14.36      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.6/38.6 MB 27.5 MB/s eta 0:00:00
+#7 14.53 Collecting seaborn>=0.13
+#7 14.56   Downloading seaborn-0.13.2-py3-none-any.whl (294 kB)
+#7 14.57      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 294.9/294.9 kB 25.6 MB/s eta 0:00:00
+#7 14.59 Collecting legacy-api-wrap>=1.4
+#7 14.62   Downloading legacy_api_wrap-1.4.1-py3-none-any.whl (10.0 kB)
+#7 14.73 Collecting h5py>=3.1
+#7 14.75   Downloading h5py-3.14.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.6 MB)
+#7 14.90      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 31.6 MB/s eta 0:00:00
+#7 15.05 Collecting statsmodels>=0.13
+#7 15.08   Downloading statsmodels-0.14.5-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (10.7 MB)
+#7 15.43      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.7/10.7 MB 30.3 MB/s eta 0:00:00
+#7 15.76 Collecting numba>=0.56
+#7 15.79   Downloading numba-0.60.0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.7 MB)
+#7 15.91      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 31.4 MB/s eta 0:00:00
+#7 15.97 Collecting session-info
+#7 15.99   Downloading session_info-1.0.1-py3-none-any.whl (9.1 kB)
+#7 16.04 Collecting joblib
+#7 16.07   Downloading joblib-1.5.2-py3-none-any.whl (308 kB)
+#7 16.07      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 308.4/308.4 kB 61.7 MB/s eta 0:00:00
+#7 16.12 Collecting packaging>=21.3
+#7 16.15   Downloading packaging-25.0-py3-none-any.whl (66 kB)
+#7 16.15      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.5/66.5 kB 256.2 MB/s eta 0:00:00
+#7 16.20 Collecting pynndescent>=0.5
+#7 16.22   Downloading pynndescent-0.5.13-py3-none-any.whl (56 kB)
+#7 16.23      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.9/56.9 kB 199.5 MB/s eta 0:00:00
+#7 16.59 Collecting matplotlib>=3.6
+#7 16.62   Downloading matplotlib-3.9.4-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (8.3 MB)
+#7 16.87      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.3/8.3 MB 33.6 MB/s eta 0:00:00
+#7 16.96 Collecting networkx>=2.7
+#7 16.98   Downloading networkx-3.2.1-py3-none-any.whl (1.6 MB)
+#7 17.04      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 33.7 MB/s eta 0:00:00
+#7 17.07 Collecting patsy
+#7 17.10   Downloading patsy-1.0.1-py2.py3-none-any.whl (232 kB)
+#7 17.10      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 232.9/232.9 kB 166.5 MB/s eta 0:00:00
+#7 17.18 Collecting threadpoolctl>=3.1.0
+#7 17.25   Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+#7 17.36 Collecting exceptiongroup
+#7 17.39   Downloading exceptiongroup-1.3.0-py3-none-any.whl (16 kB)
+#7 17.43 Collecting array-api-compat!=1.5,>1.4
+#7 17.45   Downloading array_api_compat-1.11.2-py3-none-any.whl (53 kB)
+#7 17.46      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 53.1/53.1 kB 190.0 MB/s eta 0:00:00
+#7 17.53 Collecting texttable>=1.6.2
+#7 17.56   Downloading texttable-1.7.0-py2.py3-none-any.whl (10 kB)
+#7 17.64 Collecting pyparsing>=2.3.1
+#7 17.66   Downloading pyparsing-3.2.5-py3-none-any.whl (113 kB)
+#7 17.66      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 113.9/113.9 kB 39.7 MB/s eta 0:00:00
+#7 17.73 Collecting importlib-resources>=3.2.0
+#7 17.75   Downloading importlib_resources-6.5.2-py3-none-any.whl (37 kB)
+#7 17.94 Collecting contourpy>=1.0.1
+#7 17.96   Downloading contourpy-1.3.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (321 kB)
+#7 17.97      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 321.9/321.9 kB 55.6 MB/s eta 0:00:00
+#7 17.99 Collecting cycler>=0.10
+#7 18.02   Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+#7 18.45 Collecting fonttools>=4.22.0
+#7 18.48   Downloading fonttools-4.60.1-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.8 MB)
+#7 18.64      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 29.7 MB/s eta 0:00:00
+#7 18.83 Collecting kiwisolver>=1.3.1
+#7 18.85   Downloading kiwisolver-1.4.7-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.6 MB)
+#7 18.90      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 32.3 MB/s eta 0:00:00
+#7 19.35 Collecting pillow>=8
+#7 19.39   Downloading pillow-11.3.0-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.6 MB)
+#7 19.59      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 34.7 MB/s eta 0:00:00
+#7 19.82 Collecting llvmlite<0.44,>=0.43.0dev0
+#7 19.84   Downloading llvmlite-0.43.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (43.9 MB)
+#7 21.29      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.9/43.9 MB 32.2 MB/s eta 0:00:00
+#7 21.52 Collecting six>=1.5
+#7 21.54   Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+#7 21.84 Collecting stdlib_list
+#7 21.87   Downloading stdlib_list-0.11.1-py3-none-any.whl (83 kB)
+#7 21.87      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 83.6/83.6 kB 98.6 MB/s eta 0:00:00
+#7 22.01 Collecting zipp>=3.1.0
+#7 22.04   Downloading zipp-3.23.0-py3-none-any.whl (10 kB)
+#7 22.16 Collecting typing-extensions>=4.6.0
+#7 22.18   Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+#7 22.19      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.6/44.6 kB 185.6 MB/s eta 0:00:00
+#7 22.75 Installing collected packages: texttable, pytz, zipp, urllib3, tzdata, typing-extensions, tqdm, threadpoolctl, stdlib_list, six, pyparsing, pillow, packaging, numpy, networkx, natsort, llvmlite, legacy-api-wrap, kiwisolver, joblib, igraph, idna, get-annotations, fonttools, et-xmlfile, cycler, click, charset_normalizer, certifi, array-api-compat, session-info, scipy, requests, python-dateutil, patsy, openpyxl, numba, leidenalg, importlib-resources, h5py, exceptiongroup, contourpy, scikit-learn, pandas, matplotlib, statsmodels, seaborn, pynndescent, anndata, umap-learn, scanpy, celltypist
+#7 40.24 Successfully installed anndata-0.10.9 array-api-compat-1.11.2 celltypist-1.7.1 certifi-2025.10.5 charset_normalizer-3.4.3 click-8.1.8 contourpy-1.3.0 cycler-0.12.1 et-xmlfile-2.0.0 exceptiongroup-1.3.0 fonttools-4.60.1 get-annotations-0.1.2 h5py-3.14.0 idna-3.10 igraph-0.11.9 importlib-resources-6.5.2 joblib-1.5.2 kiwisolver-1.4.7 legacy-api-wrap-1.4.1 leidenalg-0.10.2 llvmlite-0.43.0 matplotlib-3.9.4 natsort-8.4.0 networkx-3.2.1 numba-0.60.0 numpy-2.0.2 openpyxl-3.1.5 packaging-25.0 pandas-2.3.3 patsy-1.0.1 pillow-11.3.0 pynndescent-0.5.13 pyparsing-3.2.5 python-dateutil-2.9.0.post0 pytz-2025.2 requests-2.32.5 scanpy-1.10.3 scikit-learn-1.6.1 scipy-1.13.1 seaborn-0.13.2 session-info-1.0.1 six-1.17.0 statsmodels-0.14.5 stdlib_list-0.11.1 texttable-1.7.0 threadpoolctl-3.6.0 tqdm-4.67.1 typing-extensions-4.15.0 tzdata-2025.2 umap-learn-0.5.9.post2 urllib3-2.5.0 zipp-3.23.0
+#7 40.35 
+#7 40.35 [notice] A new release of pip is available: 23.0.1 -> 25.2
+#7 40.35 [notice] To update, run: pip install --upgrade pip
+#7 41.06 Collecting bbknn
+#7 41.17   Downloading bbknn-1.6.0-py3-none-any.whl (14 kB)
+#7 41.18 Requirement already satisfied: pynndescent in /opt/celltypist/lib/python3.9/site-packages (from bbknn) (0.5.13)
+#7 41.18 Requirement already satisfied: pandas in /opt/celltypist/lib/python3.9/site-packages (from bbknn) (2.3.3)
+#7 41.18 Requirement already satisfied: umap-learn in /opt/celltypist/lib/python3.9/site-packages (from bbknn) (0.5.9.post2)
+#7 41.18 Requirement already satisfied: scipy>=1.6.0 in /opt/celltypist/lib/python3.9/site-packages (from bbknn) (1.13.1)
+#7 41.82 Collecting Cython
+#7 41.84   Downloading cython-3.1.4-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.4 MB)
+#7 42.04      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.4/3.4 MB 17.8 MB/s eta 0:00:00
+#7 42.06 Requirement already satisfied: numpy in /opt/celltypist/lib/python3.9/site-packages (from bbknn) (2.0.2)
+#7 42.11 Collecting annoy
+#7 42.13   Downloading annoy-1.17.3.tar.gz (647 kB)
+#7 42.15      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 647.5/647.5 kB 54.7 MB/s eta 0:00:00
+#7 42.16   Preparing metadata (setup.py): started
+#7 43.13   Preparing metadata (setup.py): finished with status 'done'
+#7 43.13 Requirement already satisfied: scikit-learn>=1.0.2 in /opt/celltypist/lib/python3.9/site-packages (from bbknn) (1.6.1)
+#7 43.17 Requirement already satisfied: threadpoolctl>=3.1.0 in /opt/celltypist/lib/python3.9/site-packages (from scikit-learn>=1.0.2->bbknn) (3.6.0)
+#7 43.17 Requirement already satisfied: joblib>=1.2.0 in /opt/celltypist/lib/python3.9/site-packages (from scikit-learn>=1.0.2->bbknn) (1.5.2)
+#7 43.28 Requirement already satisfied: tzdata>=2022.7 in /opt/celltypist/lib/python3.9/site-packages (from pandas->bbknn) (2025.2)
+#7 43.28 Requirement already satisfied: python-dateutil>=2.8.2 in /opt/celltypist/lib/python3.9/site-packages (from pandas->bbknn) (2.9.0.post0)
+#7 43.28 Requirement already satisfied: pytz>=2020.1 in /opt/celltypist/lib/python3.9/site-packages (from pandas->bbknn) (2025.2)
+#7 43.29 Requirement already satisfied: llvmlite>=0.30 in /opt/celltypist/lib/python3.9/site-packages (from pynndescent->bbknn) (0.43.0)
+#7 43.29 Requirement already satisfied: numba>=0.51.2 in /opt/celltypist/lib/python3.9/site-packages (from pynndescent->bbknn) (0.60.0)
+#7 43.30 Requirement already satisfied: tqdm in /opt/celltypist/lib/python3.9/site-packages (from umap-learn->bbknn) (4.67.1)
+#7 43.31 Requirement already satisfied: six>=1.5 in /opt/celltypist/lib/python3.9/site-packages (from python-dateutil>=2.8.2->pandas->bbknn) (1.17.0)
+#7 43.32 Building wheels for collected packages: annoy
+#7 43.32   Building wheel for annoy (setup.py): started
+#7 49.27   Building wheel for annoy (setup.py): finished with status 'done'
+#7 49.28   Created wheel for annoy: filename=annoy-1.17.3-cp39-cp39-linux_x86_64.whl size=537273 sha256=9da55a86037def7202774532641a60299bf49c4926c3a479a88205e645c2fcb8
+#7 49.28   Stored in directory: /tmp/pip-ephem-wheel-cache-2z0azcs4/wheels/09/a9/54/37478e65995fe712f7da465749da9ddb21db6b1a599d591ac7
+#7 49.28 Successfully built annoy
+#7 49.57 Installing collected packages: annoy, Cython, bbknn
+#7 50.12 Successfully installed Cython-3.1.4 annoy-1.17.3 bbknn-1.6.0
+#7 50.23 
+#7 50.23 [notice] A new release of pip is available: 23.0.1 -> 25.2
+#7 50.23 [notice] To update, run: pip install --upgrade pip
+#7 50.84 Collecting scvi-tools
+#7 50.93   Downloading scvi_tools-1.1.6.post2-py3-none-any.whl (387 kB)
+#7 51.00      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 387.9/387.9 kB 5.9 MB/s eta 0:00:00
+#7 51.23 Collecting lightning>=2.0
+#7 51.25   Downloading lightning-2.5.5-py3-none-any.whl (828 kB)
+#7 51.30      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 828.5/828.5 kB 16.7 MB/s eta 0:00:00
+#7 51.45 Collecting torch>=1.8.0
+#7 51.47   Downloading torch-2.8.0-cp39-cp39-manylinux_2_28_x86_64.whl (888.0 MB)
+#7 100.2      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 888.0/888.0 MB 2.5 MB/s eta 0:00:00
+#7 102.8 Collecting numpyro>=0.12.1
+#7 102.8   Downloading numpyro-0.19.0-py3-none-any.whl (370 kB)
+#7 102.9      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 370.9/370.9 kB 6.7 MB/s eta 0:00:00
+#7 103.0 Collecting jaxlib>=0.4.3
+#7 103.0   Downloading jaxlib-0.4.30-cp39-cp39-manylinux2014_x86_64.whl (79.6 MB)
+#7 110.7      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.6/79.6 MB 11.5 MB/s eta 0:00:00
+#7 110.9 Requirement already satisfied: pandas>=1.0 in /opt/celltypist/lib/python3.9/site-packages (from scvi-tools) (2.3.3)
+#7 111.0 Collecting anndata<=0.10.8,>=0.7.5
+#7 111.0   Downloading anndata-0.10.8-py3-none-any.whl (124 kB)
+#7 111.0      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 124.4/124.4 kB 21.2 MB/s eta 0:00:00
+#7 111.1 Collecting docrep>=0.3.2
+#7 111.1   Downloading docrep-0.3.2.tar.gz (33 kB)
+#7 111.1   Preparing metadata (setup.py): started
+#7 111.3   Preparing metadata (setup.py): finished with status 'done'
+#7 111.4 Collecting flax
+#7 111.4   Downloading flax-0.8.5-py3-none-any.whl (731 kB)
+#7 111.5      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 731.3/731.3 kB 14.0 MB/s eta 0:00:00
+#7 111.5 Requirement already satisfied: scipy in /opt/celltypist/lib/python3.9/site-packages (from scvi-tools) (1.13.1)
+#7 111.5 Requirement already satisfied: h5py>=2.9.0 in /opt/celltypist/lib/python3.9/site-packages (from scvi-tools) (3.14.0)
+#7 111.5 Collecting torchmetrics>=0.11.0
+#7 111.6   Downloading torchmetrics-1.8.2-py3-none-any.whl (983 kB)
+#7 111.6      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 983.2/983.2 kB 14.2 MB/s eta 0:00:00
+#7 111.6 Requirement already satisfied: scikit-learn>=0.21.2 in /opt/celltypist/lib/python3.9/site-packages (from scvi-tools) (1.6.1)
+#7 111.7 Collecting mudata>=0.1.2
+#7 111.7   Downloading mudata-0.2.4-py3-none-any.whl (24 kB)
+#7 111.8 Collecting pyro-ppl>=1.6.0
+#7 111.8   Downloading pyro_ppl-1.9.1-py3-none-any.whl (755 kB)
+#7 111.8      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 756.0/756.0 kB 15.1 MB/s eta 0:00:00
+#7 111.8 Requirement already satisfied: tqdm>=4.56.0 in /opt/celltypist/lib/python3.9/site-packages (from scvi-tools) (4.67.1)
+#7 112.4 Collecting numpy<2.0,>=1.21.0
+#7 112.4   Downloading numpy-1.26.4-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.2 MB)
+#7 113.6      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.2/18.2 MB 14.2 MB/s eta 0:00:00
+#7 113.8 Collecting optax
+#7 113.8   Downloading optax-0.2.4-py3-none-any.whl (319 kB)
+#7 113.8      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 319.2/319.2 kB 20.4 MB/s eta 0:00:00
+#7 113.9 Collecting jax>=0.4.4
+#7 113.9   Downloading jax-0.4.30-py3-none-any.whl (2.0 MB)
+#7 114.0      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 14.7 MB/s eta 0:00:00
+#7 114.1 Collecting ml-collections>=0.1.1
+#7 114.1   Downloading ml_collections-0.1.1.tar.gz (77 kB)
+#7 114.1      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 77.9/77.9 kB 30.3 MB/s eta 0:00:00
+#7 114.1   Preparing metadata (setup.py): started
+#7 114.3   Preparing metadata (setup.py): finished with status 'done'
+#7 114.4 Collecting rich>=12.0.0
+#7 114.5   Downloading rich-14.1.0-py3-none-any.whl (243 kB)
+#7 114.5      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 243.4/243.4 kB 26.8 MB/s eta 0:00:00
+#7 114.5 Requirement already satisfied: array-api-compat!=1.5,>1.4 in /opt/celltypist/lib/python3.9/site-packages (from anndata<=0.10.8,>=0.7.5->scvi-tools) (1.11.2)
+#7 114.5 Requirement already satisfied: packaging>=20.0 in /opt/celltypist/lib/python3.9/site-packages (from anndata<=0.10.8,>=0.7.5->scvi-tools) (25.0)
+#7 114.5 Requirement already satisfied: natsort in /opt/celltypist/lib/python3.9/site-packages (from anndata<=0.10.8,>=0.7.5->scvi-tools) (8.4.0)
+#7 114.5 Requirement already satisfied: exceptiongroup in /opt/celltypist/lib/python3.9/site-packages (from anndata<=0.10.8,>=0.7.5->scvi-tools) (1.3.0)
+#7 114.5 Requirement already satisfied: six in /opt/celltypist/lib/python3.9/site-packages (from docrep>=0.3.2->scvi-tools) (1.17.0)
+#7 114.6 Collecting ml-dtypes>=0.2.0
+#7 114.7   Downloading ml_dtypes-0.5.3-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (4.9 MB)
+#7 115.0      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 14.8 MB/s eta 0:00:00
+#7 115.1 Collecting importlib-metadata>=4.6
+#7 115.2   Downloading importlib_metadata-8.7.0-py3-none-any.whl (27 kB)
+#7 115.2 Collecting opt-einsum
+#7 115.2   Downloading opt_einsum-3.4.0-py3-none-any.whl (71 kB)
+#7 115.2      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.9/71.9 kB 16.4 MB/s eta 0:00:00
+#7 115.4 Collecting lightning-utilities<2.0,>=0.10.0
+#7 115.5   Downloading lightning_utilities-0.15.2-py3-none-any.whl (29 kB)
+#7 115.5 Collecting pytorch-lightning
+#7 115.6   Downloading pytorch_lightning-2.5.5-py3-none-any.whl (832 kB)
+#7 115.6      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 832.4/832.4 kB 12.7 MB/s eta 0:00:00
+#7 115.6 Requirement already satisfied: typing-extensions<6.0,>4.5.0 in /opt/celltypist/lib/python3.9/site-packages (from lightning>=2.0->scvi-tools) (4.15.0)
+#7 115.7 Collecting fsspec[http]<2027.0,>=2022.5.0
+#7 115.7   Downloading fsspec-2025.9.0-py3-none-any.whl (199 kB)
+#7 115.7      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 199.3/199.3 kB 14.5 MB/s eta 0:00:00
+#7 115.9 Collecting PyYAML<8.0,>5.4
+#7 115.9   Downloading pyyaml-6.0.3-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (750 kB)
+#7 116.0      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 750.8/750.8 kB 12.8 MB/s eta 0:00:00
+#7 116.0 Collecting absl-py
+#7 116.0   Downloading absl_py-2.3.1-py3-none-any.whl (135 kB)
+#7 116.0      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.8/135.8 kB 16.6 MB/s eta 0:00:00
+#7 116.1 Collecting contextlib2
+#7 116.1   Downloading contextlib2-21.6.0-py2.py3-none-any.whl (13 kB)
+#7 116.2 Collecting multipledispatch
+#7 116.2   Downloading multipledispatch-1.0.0-py3-none-any.whl (12 kB)
+#7 116.3 Requirement already satisfied: tzdata>=2022.7 in /opt/celltypist/lib/python3.9/site-packages (from pandas>=1.0->scvi-tools) (2025.2)
+#7 116.3 Requirement already satisfied: pytz>=2020.1 in /opt/celltypist/lib/python3.9/site-packages (from pandas>=1.0->scvi-tools) (2025.2)
+#7 116.3 Requirement already satisfied: python-dateutil>=2.8.2 in /opt/celltypist/lib/python3.9/site-packages (from pandas>=1.0->scvi-tools) (2.9.0.post0)
+#7 116.4 Collecting pyro-api>=0.1.1
+#7 116.4   Downloading pyro_api-0.1.2-py3-none-any.whl (11 kB)
+#7 116.5 Collecting markdown-it-py>=2.2.0
+#7 116.5   Downloading markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
+#7 116.5      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.5/87.5 kB 11.6 MB/s eta 0:00:00
+#7 116.5 Collecting pygments<3.0.0,>=2.13.0
+#7 116.6   Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+#7 116.7      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 12.7 MB/s eta 0:00:00
+#7 116.7 Requirement already satisfied: joblib>=1.2.0 in /opt/celltypist/lib/python3.9/site-packages (from scikit-learn>=0.21.2->scvi-tools) (1.5.2)
+#7 116.7 Requirement already satisfied: threadpoolctl>=3.1.0 in /opt/celltypist/lib/python3.9/site-packages (from scikit-learn>=0.21.2->scvi-tools) (3.6.0)
+#7 116.9 Collecting sympy>=1.13.3
+#7 116.9   Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+#7 117.4      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 12.8 MB/s eta 0:00:00
+#7 117.5 Collecting nvidia-nvjitlink-cu12==12.8.93
+#7 117.5   Downloading nvidia_nvjitlink_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (39.3 MB)
+#7 120.2      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 39.3/39.3 MB 14.2 MB/s eta 0:00:00
+#7 120.4 Collecting filelock
+#7 120.4   Downloading filelock-3.19.1-py3-none-any.whl (15 kB)
+#7 120.4 Collecting nvidia-cufile-cu12==1.13.1.3
+#7 120.4   Downloading nvidia_cufile_cu12-1.13.1.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.2 MB)
+#7 120.5      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 17.7 MB/s eta 0:00:00
+#7 120.6 Collecting nvidia-cuda-nvrtc-cu12==12.8.93
+#7 120.6   Downloading nvidia_cuda_nvrtc_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (88.0 MB)
+#7 130.5      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 88.0/88.0 MB 8.0 MB/s eta 0:00:00
+#7 130.8 Collecting nvidia-cudnn-cu12==9.10.2.21
+#7 130.9   Downloading nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_x86_64.whl (706.8 MB)
+#7 185.5      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 706.8/706.8 MB 4.2 MB/s eta 0:00:00
+#7 187.5 Collecting nvidia-cusparse-cu12==12.5.8.93
+#7 187.5   Downloading nvidia_cusparse_cu12-12.5.8.93-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (288.2 MB)
+#7 209.8      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 288.2/288.2 MB 8.1 MB/s eta 0:00:00
+#7 210.7 Collecting nvidia-cusolver-cu12==11.7.3.90
+#7 210.7   Downloading nvidia_cusolver_cu12-11.7.3.90-py3-none-manylinux_2_27_x86_64.whl (267.5 MB)
+#7 230.0      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 267.5/267.5 MB 7.6 MB/s eta 0:00:00
+#7 230.8 Requirement already satisfied: networkx in /opt/celltypist/lib/python3.9/site-packages (from torch>=1.8.0->scvi-tools) (3.2.1)
+#7 230.8 Collecting jinja2
+#7 230.8   Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+#7 230.8      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 22.6 MB/s eta 0:00:00
+#7 230.9 Collecting nvidia-cuda-runtime-cu12==12.8.90
+#7 230.9   Downloading nvidia_cuda_runtime_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (954 kB)
+#7 231.0      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 954.8/954.8 kB 13.9 MB/s eta 0:00:00
+#7 231.0 Collecting nvidia-nvtx-cu12==12.8.90
+#7 231.0   Downloading nvidia_nvtx_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (89 kB)
+#7 231.0      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.0/90.0 kB 25.8 MB/s eta 0:00:00
+#7 231.1 Collecting triton==3.4.0
+#7 231.1   Downloading triton-3.4.0-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (155.4 MB)
+#7 251.6      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.4/155.4 MB 6.1 MB/s eta 0:00:00
+#7 252.1 Collecting nvidia-cublas-cu12==12.8.4.1
+#7 252.1   Downloading nvidia_cublas_cu12-12.8.4.1-py3-none-manylinux_2_27_x86_64.whl (594.3 MB)
+#7 316.2      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 594.3/594.3 MB 4.2 MB/s eta 0:00:00
+#7 317.9 Collecting nvidia-cuda-cupti-cu12==12.8.90
+#7 317.9   Downloading nvidia_cuda_cupti_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (10.2 MB)
+#7 318.7      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 13.3 MB/s eta 0:00:00
+#7 318.8 Collecting nvidia-nccl-cu12==2.27.3
+#7 318.8   Downloading nvidia_nccl_cu12-2.27.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (322.4 MB)
+#7 347.0      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 322.4/322.4 MB 4.6 MB/s eta 0:00:00
+#7 347.9 Collecting nvidia-curand-cu12==10.3.9.90
+#7 347.9   Downloading nvidia_curand_cu12-10.3.9.90-py3-none-manylinux_2_27_x86_64.whl (63.6 MB)
+#7 356.9      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.6/63.6 MB 7.9 MB/s eta 0:00:00
+#7 357.1 Collecting nvidia-cufft-cu12==11.3.3.83
+#7 357.1   Downloading nvidia_cufft_cu12-11.3.3.83-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (193.1 MB)
+#7 369.8      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 193.1/193.1 MB 11.0 MB/s eta 0:00:00
+#7 370.3 Collecting nvidia-cusparselt-cu12==0.7.1
+#7 370.4   Downloading nvidia_cusparselt_cu12-0.7.1-py3-none-manylinux2014_x86_64.whl (287.2 MB)
+#7 383.9      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 287.2/287.2 MB 6.7 MB/s eta 0:00:00
+#7 384.8 Requirement already satisfied: setuptools>=40.8.0 in /opt/celltypist/lib/python3.9/site-packages (from triton==3.4.0->torch>=1.8.0->scvi-tools) (58.1.0)
+#7 385.1 Collecting tensorstore
+#7 385.2   Downloading tensorstore-0.1.69-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.5 MB)
+#7 386.2      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 17.5/17.5 MB 15.5 MB/s eta 0:00:00
+#7 386.3 Collecting orbax-checkpoint
+#7 386.3   Downloading orbax_checkpoint-0.6.4-py3-none-any.whl (270 kB)
+#7 386.4      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 270.5/270.5 kB 21.0 MB/s eta 0:00:00
+#7 386.5 Collecting msgpack
+#7 386.6   Downloading msgpack-1.1.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (405 kB)
+#7 386.6      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 405.9/405.9 kB 18.5 MB/s eta 0:00:00
+#7 386.7 Collecting etils[epy]
+#7 386.7   Downloading etils-1.5.2-py3-none-any.whl (140 kB)
+#7 386.7      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.6/140.6 kB 24.5 MB/s eta 0:00:00
+#7 386.7 Collecting chex>=0.1.87
+#7 386.7   Downloading chex-0.1.90-py3-none-any.whl (101 kB)
+#7 386.7      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 101.0/101.0 kB 20.7 MB/s eta 0:00:00
+#7 386.8 Collecting toolz>=0.9.0
+#7 386.8   Downloading toolz-1.0.0-py3-none-any.whl (56 kB)
+#7 386.8      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.4/56.4 kB 24.5 MB/s eta 0:00:00
+#7 388.4 Collecting aiohttp!=4.0.0a0,!=4.0.0a1
+#7 388.4   Downloading aiohttp-3.13.0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+#7 388.5      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 16.7 MB/s eta 0:00:00
+#7 388.6 Requirement already satisfied: zipp>=3.20 in /opt/celltypist/lib/python3.9/site-packages (from importlib-metadata>=4.6->jax>=0.4.4->scvi-tools) (3.23.0)
+#7 388.6 Collecting mdurl~=0.1
+#7 388.7   Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+#7 388.7 Collecting mpmath<1.4,>=1.1.0
+#7 388.8   Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+#7 388.8      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 16.0 MB/s eta 0:00:00
+#7 389.1 Collecting MarkupSafe>=2.0
+#7 389.1   Downloading markupsafe-3.0.3-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (20 kB)
+#7 389.6 Collecting protobuf
+#7 389.6   Downloading protobuf-6.32.1-cp39-abi3-manylinux2014_x86_64.whl (322 kB)
+#7 389.6      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 322.0/322.0 kB 23.1 MB/s eta 0:00:00
+#7 389.7 Collecting nest_asyncio
+#7 389.7   Downloading nest_asyncio-1.6.0-py3-none-any.whl (5.2 kB)
+#7 389.7 Collecting humanize
+#7 389.7   Downloading humanize-4.13.0-py3-none-any.whl (128 kB)
+#7 389.8      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 128.9/128.9 kB 28.9 MB/s eta 0:00:00
+#7 389.9 Collecting attrs>=17.3.0
+#7 389.9   Downloading attrs-25.4.0-py3-none-any.whl (67 kB)
+#7 389.9      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.6/67.6 kB 25.9 MB/s eta 0:00:00
+#7 390.1 Collecting propcache>=0.2.0
+#7 390.1   Downloading propcache-0.4.0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (196 kB)
+#7 390.1      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 197.0/197.0 kB 19.2 MB/s eta 0:00:00
+#7 390.1 Collecting async-timeout<6.0,>=4.0
+#7 390.1   Downloading async_timeout-5.0.1-py3-none-any.whl (6.2 kB)
+#7 390.9 Collecting yarl<2.0,>=1.17.0
+#7 391.0   Downloading yarl-1.22.0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (346 kB)
+#7 391.0      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 346.5/346.5 kB 20.4 MB/s eta 0:00:00
+#7 391.0 Collecting aiosignal>=1.4.0
+#7 391.0   Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+#7 391.1 Collecting aiohappyeyeballs>=2.5.0
+#7 391.1   Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl (15 kB)
+#7 391.3 Collecting frozenlist>=1.1.1
+#7 391.3   Downloading frozenlist-1.8.0-cp39-cp39-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (219 kB)
+#7 391.3      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 219.5/219.5 kB 21.5 MB/s eta 0:00:00
+#7 392.0 Collecting multidict<7.0,>=4.5
+#7 392.1   Downloading multidict-6.7.0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (239 kB)
+#7 392.1      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 239.2/239.2 kB 19.6 MB/s eta 0:00:00
+#7 392.1 Requirement already satisfied: importlib_resources in /opt/celltypist/lib/python3.9/site-packages (from etils[epy]->optax->scvi-tools) (6.5.2)
+#7 392.2 Requirement already satisfied: idna>=2.0 in /opt/celltypist/lib/python3.9/site-packages (from yarl<2.0,>=1.17.0->aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2027.0,>=2022.5.0->lightning>=2.0->scvi-tools) (3.10)
+#7 392.3 Building wheels for collected packages: docrep, ml-collections
+#7 392.3   Building wheel for docrep (setup.py): started
+#7 392.7   Building wheel for docrep (setup.py): finished with status 'done'
+#7 392.7   Created wheel for docrep: filename=docrep-0.3.2-py3-none-any.whl size=19895 sha256=3ad121020eb2e45aa39f5d036ae038166d419e5c6a9b3f1c1a7e4272cfc0afac
+#7 392.7   Stored in directory: /root/.cache/pip/wheels/e5/f0/3f/17394a03ed36922f620186a5a9ebd6bce2b4579020243c7a68
+#7 392.7   Building wheel for ml-collections (setup.py): started
+#7 393.1   Building wheel for ml-collections (setup.py): finished with status 'done'
+#7 393.1   Created wheel for ml-collections: filename=ml_collections-0.1.1-py3-none-any.whl size=94524 sha256=68d6136ce2d9fefcda392192632a182aee7cbbce910bb7451ad389234324fa81
+#7 393.1   Stored in directory: /root/.cache/pip/wheels/fd/c2/0d/5d94d95e5875ea17b85a9f1f99b8dd2e50517137c8042c6468
+#7 393.1 Successfully built docrep ml-collections
+#7 394.4 Installing collected packages: pyro-api, nvidia-cusparselt-cu12, multipledispatch, mpmath, toolz, sympy, PyYAML, pygments, protobuf, propcache, opt-einsum, nvidia-nvtx-cu12, nvidia-nvjitlink-cu12, nvidia-nccl-cu12, nvidia-curand-cu12, nvidia-cufile-cu12, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, nvidia-cublas-cu12, numpy, nest_asyncio, multidict, msgpack, mdurl, MarkupSafe, lightning-utilities, importlib-metadata, humanize, fsspec, frozenlist, filelock, etils, docrep, contextlib2, attrs, async-timeout, aiohappyeyeballs, absl-py, yarl, triton, nvidia-cusparse-cu12, nvidia-cufft-cu12, nvidia-cudnn-cu12, ml-dtypes, ml-collections, markdown-it-py, jinja2, aiosignal, tensorstore, rich, nvidia-cusolver-cu12, jaxlib, anndata, aiohttp, torch, mudata, jax, torchmetrics, pyro-ppl, orbax-checkpoint, numpyro, chex, pytorch-lightning, optax, lightning, flax, scvi-tools
+#7 410.4   Attempting uninstall: numpy
+#7 410.4     Found existing installation: numpy 2.0.2
+#7 410.6     Uninstalling numpy-2.0.2:
+#7 410.6       Successfully uninstalled numpy-2.0.2
+#7 429.5   Attempting uninstall: anndata
+#7 429.5     Found existing installation: anndata 0.10.9
+#7 429.5     Uninstalling anndata-0.10.9:
+#7 429.5       Successfully uninstalled anndata-0.10.9
+#7 445.7 Successfully installed MarkupSafe-3.0.3 PyYAML-6.0.3 absl-py-2.3.1 aiohappyeyeballs-2.6.1 aiohttp-3.13.0 aiosignal-1.4.0 anndata-0.10.8 async-timeout-5.0.1 attrs-25.4.0 chex-0.1.90 contextlib2-21.6.0 docrep-0.3.2 etils-1.5.2 filelock-3.19.1 flax-0.8.5 frozenlist-1.8.0 fsspec-2025.9.0 humanize-4.13.0 importlib-metadata-8.7.0 jax-0.4.30 jaxlib-0.4.30 jinja2-3.1.6 lightning-2.5.5 lightning-utilities-0.15.2 markdown-it-py-3.0.0 mdurl-0.1.2 ml-collections-0.1.1 ml-dtypes-0.5.3 mpmath-1.3.0 msgpack-1.1.1 mudata-0.2.4 multidict-6.7.0 multipledispatch-1.0.0 nest_asyncio-1.6.0 numpy-1.26.4 numpyro-0.19.0 nvidia-cublas-cu12-12.8.4.1 nvidia-cuda-cupti-cu12-12.8.90 nvidia-cuda-nvrtc-cu12-12.8.93 nvidia-cuda-runtime-cu12-12.8.90 nvidia-cudnn-cu12-9.10.2.21 nvidia-cufft-cu12-11.3.3.83 nvidia-cufile-cu12-1.13.1.3 nvidia-curand-cu12-10.3.9.90 nvidia-cusolver-cu12-11.7.3.90 nvidia-cusparse-cu12-12.5.8.93 nvidia-cusparselt-cu12-0.7.1 nvidia-nccl-cu12-2.27.3 nvidia-nvjitlink-cu12-12.8.93 nvidia-nvtx-cu12-12.8.90 opt-einsum-3.4.0 optax-0.2.4 orbax-checkpoint-0.6.4 propcache-0.4.0 protobuf-6.32.1 pygments-2.19.2 pyro-api-0.1.2 pyro-ppl-1.9.1 pytorch-lightning-2.5.5 rich-14.1.0 scvi-tools-1.1.6.post2 sympy-1.14.0 tensorstore-0.1.69 toolz-1.0.0 torch-2.8.0 torchmetrics-1.8.2 triton-3.4.0 yarl-1.22.0
+#7 445.8 
+#7 445.8 [notice] A new release of pip is available: 23.0.1 -> 25.2
+#7 445.8 [notice] To update, run: pip install --upgrade pip
+#7 451.6 📜 Retrieving model list from server https://celltypist.cog.sanger.ac.uk/models/models.json
+#7 452.1 📚 Total models in list: 56
+#7 452.1 📂 Storing models in /opt/celltypist/data/models
+#7 452.1 💾 Downloading model [1/56]: Immune_All_Low.pkl
+#7 453.6 💾 Downloading model [2/56]: Immune_All_High.pkl
+#7 454.5 💾 Downloading model [3/56]: Adult_COVID19_PBMC.pkl
+#7 455.2 💾 Downloading model [4/56]: Adult_CynomolgusMacaque_Hippocampus.pkl
+#7 456.2 💾 Downloading model [5/56]: Adult_Human_MTG.pkl
+#7 457.8 💾 Downloading model [6/56]: Adult_Human_PancreaticIslet.pkl
+#7 458.6 💾 Downloading model [7/56]: Adult_Human_PrefrontalCortex.pkl
+#7 460.1 💾 Downloading model [8/56]: Adult_Human_Skin.pkl
+#7 460.9 💾 Downloading model [9/56]: Adult_Human_Vascular.pkl
+#7 462.0 💾 Downloading model [10/56]: Adult_Mouse_Gut.pkl
+#7 464.1 💾 Downloading model [11/56]: Adult_Mouse_OlfactoryBulb.pkl
+#7 465.0 💾 Downloading model [12/56]: Adult_Pig_Hippocampus.pkl
+#7 465.7 💾 Downloading model [13/56]: Adult_RhesusMacaque_Hippocampus.pkl
+#7 466.4 💾 Downloading model [14/56]: Adult_cHSPCs_Illumina.pkl
+#7 467.1 💾 Downloading model [15/56]: Adult_cHSPCs_Ultima.pkl
+#7 467.8 💾 Downloading model [16/56]: Autopsy_COVID19_Lung.pkl
+#7 468.6 💾 Downloading model [17/56]: COVID19_HumanChallenge_Blood.pkl
+#7 469.7 💾 Downloading model [18/56]: COVID19_Immune_Landscape.pkl
+#7 470.6 💾 Downloading model [19/56]: Cells_Adult_Breast.pkl
+#7 471.5 💾 Downloading model [20/56]: Cells_Fetal_Lung.pkl
+#7 474.2 💾 Downloading model [21/56]: Cells_Human_Tonsil.pkl
+#7 476.5 💾 Downloading model [22/56]: Cells_Intestinal_Tract.pkl
+#7 478.1 💾 Downloading model [23/56]: Cells_Lung_Airway.pkl
+#7 479.2 💾 Downloading model [24/56]: Developing_Human_Brain.pkl
+#7 480.0 💾 Downloading model [25/56]: Developing_Human_Gonads.pkl
+#7 480.8 💾 Downloading model [26/56]: Developing_Human_Hippocampus.pkl
+#7 481.5 💾 Downloading model [27/56]: Developing_Human_Organs.pkl
+#7 482.3 💾 Downloading model [28/56]: Developing_Human_Thymus.pkl
+#7 483.4 💾 Downloading model [29/56]: Developing_Mouse_Brain.pkl
+#7 485.5 💾 Downloading model [30/56]: Developing_Mouse_Hippocampus.pkl
+#7 486.2 💾 Downloading model [31/56]: Fetal_Human_AdrenalGlands.pkl
+#7 486.8 💾 Downloading model [32/56]: Fetal_Human_Pancreas.pkl
+#7 487.6 💾 Downloading model [33/56]: Fetal_Human_Pituitary.pkl
+#7 488.4 💾 Downloading model [34/56]: Fetal_Human_Retina.pkl
+#7 489.4 💾 Downloading model [35/56]: Fetal_Human_Skin.pkl
+#7 490.1 💾 Downloading model [36/56]: Healthy_Adult_Heart.pkl
+#7 491.1 💾 Downloading model [37/56]: Healthy_COVID19_PBMC.pkl
+#7 492.1 💾 Downloading model [38/56]: Healthy_Human_Liver.pkl
+#7 492.8 💾 Downloading model [39/56]: Healthy_Mouse_Liver.pkl
+#7 493.5 💾 Downloading model [40/56]: Human_AdultAged_Hippocampus.pkl
+#7 494.7 💾 Downloading model [41/56]: Human_Colorectal_Cancer.pkl
+#7 495.5 💾 Downloading model [42/56]: Human_Developmental_Retina.pkl
+#7 496.1 💾 Downloading model [43/56]: Human_Embryonic_YolkSac.pkl
+#7 497.0 💾 Downloading model [44/56]: Human_Endometrium_Atlas.pkl
+#7 497.8 💾 Downloading model [45/56]: Human_IPF_Lung.pkl
+#7 498.6 💾 Downloading model [46/56]: Human_Longitudinal_Hippocampus.pkl
+#7 499.3 💾 Downloading model [47/56]: Human_Lung_Atlas.pkl
+#7 500.4 💾 Downloading model [48/56]: Human_PF_Lung.pkl
+#7 501.2 💾 Downloading model [49/56]: Human_Placenta_Decidua.pkl
+#7 502.0 💾 Downloading model [50/56]: Lethal_COVID19_Lung.pkl
+#7 502.8 💾 Downloading model [51/56]: Mouse_Dentate_Gyrus.pkl
+#7 503.7 💾 Downloading model [52/56]: Mouse_Isocortex_Hippocampus.pkl
+#7 504.7 💾 Downloading model [53/56]: Mouse_Postnatal_DentateGyrus.pkl
+#7 505.6 💾 Downloading model [54/56]: Mouse_Whole_Brain.pkl
+#7 508.1 💾 Downloading model [55/56]: Nuclei_Lung_Airway.pkl
+#7 509.2 💾 Downloading model [56/56]: Pan_Fetal_Human.pkl
+#7 DONE 511.7s
 
-View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/aa3lmgj2r85you1xyjb64e21a
+#8 [4/4] RUN apt-get install -y procps && rm -rf /var/lib/apt/lists/*
+#8 0.228 Reading package lists...
+#8 0.700 Building dependency tree...
+#8 0.802 Reading state information...
+#8 1.148 The following additional packages will be installed:
+#8 1.149   libproc2-0 linux-sysctl-defaults psmisc
+#8 1.201 The following NEW packages will be installed:
+#8 1.202   libproc2-0 linux-sysctl-defaults procps psmisc
+#8 1.454 0 upgraded, 4 newly installed, 0 to remove and 3 not upgraded.
+#8 1.454 Need to get 1220 kB of archives.
+#8 1.454 After this operation, 3687 kB of additional disk space will be used.
+#8 1.454 Get:1 http://deb.debian.org/debian trixie/main amd64 linux-sysctl-defaults all 4.12 [5624 B]
+#8 1.487 Get:2 http://deb.debian.org/debian trixie/main amd64 libproc2-0 amd64 2:4.0.4-9 [65.6 kB]
+#8 1.510 Get:3 http://deb.debian.org/debian trixie/main amd64 procps amd64 2:4.0.4-9 [882 kB]
+#8 1.577 Get:4 http://deb.debian.org/debian trixie/main amd64 psmisc amd64 23.7-2 [267 kB]
+#8 1.899 debconf: unable to initialize frontend: Dialog
+#8 1.899 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#8 1.899 debconf: falling back to frontend: Readline
+#8 1.951 debconf: unable to initialize frontend: Readline
+#8 1.951 debconf: (This frontend requires a controlling tty.)
+#8 1.951 debconf: falling back to frontend: Teletype
+#8 2.000 debconf: unable to initialize frontend: Teletype
+#8 2.000 debconf: (This frontend requires a controlling tty.)
+#8 2.000 debconf: falling back to frontend: Noninteractive
+#8 2.550 Fetched 1220 kB in 0s (3350 kB/s)
+#8 2.628 Selecting previously unselected package linux-sysctl-defaults.
+#8 2.628 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 16648 files and directories currently installed.)
+#8 2.652 Preparing to unpack .../linux-sysctl-defaults_4.12_all.deb ...
+#8 2.654 Unpacking linux-sysctl-defaults (4.12) ...
+#8 2.750 Selecting previously unselected package libproc2-0:amd64.
+#8 2.751 Preparing to unpack .../libproc2-0_2%3a4.0.4-9_amd64.deb ...
+#8 2.754 Unpacking libproc2-0:amd64 (2:4.0.4-9) ...
+#8 2.847 Selecting previously unselected package procps.
+#8 2.848 Preparing to unpack .../procps_2%3a4.0.4-9_amd64.deb ...
+#8 2.907 Unpacking procps (2:4.0.4-9) ...
+#8 3.022 Selecting previously unselected package psmisc.
+#8 3.023 Preparing to unpack .../psmisc_23.7-2_amd64.deb ...
+#8 3.024 Unpacking psmisc (23.7-2) ...
+#8 3.100 Setting up psmisc (23.7-2) ...
+#8 3.106 Setting up linux-sysctl-defaults (4.12) ...
+#8 3.109 Setting up libproc2-0:amd64 (2:4.0.4-9) ...
+#8 3.114 Setting up procps (2:4.0.4-9) ...
+#8 3.253 Processing triggers for libc-bin (2.41-12) ...
+#8 DONE 3.3s
+
+#9 exporting to image
+#9 exporting layers
+#9 exporting layers 24.4s done
+#9 writing image sha256:f647889e08635c4fe47cf46a9304d5a6b8fda561e4680e0e03894301204a949b done
+#9 naming to docker.io/ncarrut/celltypist_nextflow:update_bbknn done
+#9 DONE 24.5s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/lbg2mw4rm0t92j1r6t7zdq15o

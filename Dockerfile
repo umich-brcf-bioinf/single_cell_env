@@ -10,7 +10,8 @@ RUN python -m pip install --upgrade pip && \
     python -m venv $CELLTYPIST_FOLDER && \
     pip install wheel --no-cache-dir && \
     pip install celltypist --no-cache-dir && \
-    pip install bbknn && \
+    pip install bbknn --no-cache-dir && \
+    pip install -U scvi-tools && \
     celltypist --update-models
 
 CMD ["celltypist", "--help"]
