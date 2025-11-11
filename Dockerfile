@@ -46,9 +46,11 @@ RUN Rscript -e "\
         'SummarizedExperiment'));" && \
     rm -r /tmp/Rtmp*
 
+# Pull specific commit to main that includes support for SpaceRangerV4
+# https://github.com/satijalab/seurat/commit/914c0f180bf919898ba573eb28bbeb259aa94cbc
 RUN Rscript -e "\
         library(devtools); \
-        devtools::install_github('satijalab/seurat@v5.1.0');"
+        devtools::install_github('satijalab/seurat', ref='914c0f180bf919898ba573eb28bbeb259aa94cbc');"
 
 RUN wget -P /tmp https://repo.anaconda.com/miniconda/Miniconda3-py311_23.10.0-1-Linux-x86_64.sh && \
     sha256sum /tmp/Miniconda3-py311_23.10.0-1-Linux-x86_64.sh && \
@@ -96,6 +98,16 @@ RUN Rscript -e "\
 
 RUN Rscript -e "\
     install.packages('arrow');"
+
+RUN Rscript -e "\
+    BiocManager::install(c(\
+        'SingleR', \
+        'celldex', \
+        'scran', \
+        'RCurl', \
+    ));" && \
+    rm -r /tmp/Rtmp*
+
 
 RUN mkdir /opt/virtualenvs/ && \
     export WORKON_HOME=/opt/virtualenvs ; Rscript -e "\
