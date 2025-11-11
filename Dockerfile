@@ -104,7 +104,7 @@ RUN Rscript -e "\
         'SingleR', \
         'celldex', \
         'scran', \
-        'RCurl', \
+        'RCurl' \
     ));" && \
     rm -r /tmp/Rtmp*
 
