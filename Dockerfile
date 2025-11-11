@@ -44,7 +44,7 @@ RUN Rscript -e "\
         'S4Vectors', \
         'SingleCellExperiment', \
         'SummarizedExperiment'));" && \
-    rm -r /tmp/Rtmp*
+    rm -fr /tmp/Rtmp*
 
 # Pull specific commit to main that includes support for SpaceRangerV4
 # https://github.com/satijalab/seurat/commit/914c0f180bf919898ba573eb28bbeb259aa94cbc
@@ -106,7 +106,7 @@ RUN Rscript -e "\
         'scran', \
         'RCurl' \
     ));" && \
-    rm -r /tmp/Rtmp*
+    rm -fr /tmp/Rtmp*
 
 
 RUN mkdir /opt/virtualenvs/ && \
