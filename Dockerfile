@@ -68,7 +68,7 @@ RUN apt-get update && \
     dpkg -i /tmp/rstudio-2023.09.1-494-amd64.deb && \
     rm /tmp/rstudio-2023.09.1-494-amd64.deb
 
-RUN pip install scanpy loompy scvelo && \
+RUN pip install scanpy loompy scvelo macs2 && \
     pip cache purge
 
 RUN apt-get install -y libboost-all-dev && \
@@ -108,6 +108,10 @@ RUN Rscript -e "\
     ));" && \
     rm -fr /tmp/Rtmp*
 
+
+RUN Rscript -e "\
+    library(devtools); \
+    install_github('chris-mcginnis-ucsf/DoubletFinder', force = TRUE);"
 
 RUN mkdir /opt/virtualenvs/ && \
     export WORKON_HOME=/opt/virtualenvs ; Rscript -e "\
