@@ -1,28 +1,19 @@
 FROM bioconductor/bioconductor_docker:RELEASE_3_19-R-4.4.0
 
 RUN Rscript -e "\
-    install.packages(c(\
-        'bookdown', \
-        'ComplexUpset', \
-        'cowplot', \
-        'dplyr', \
-        'ggplot2', \
-        'ggrepel', \
-        'hdf5r', \
-        'Hmisc', \
-        'kableExtra', \
-        'locfit', \
-        'metap', \
-        'patchwork', \
-        'plotly', \
-        'reticulate', \
-        'Signac', \
-        'tidyverse')); \
     BiocManager::install(c(\
         'AnnotationDbi', \
         'AnnotationFilter', \
+        'arrow', \
         'batchelor', \
         'BiocGenerics', \
+        'bnprks/BPCells/r', \
+        'bookdown', \
+        'celda', \
+        'celldex', \
+        'chris-mcginnis-ucsf/DoubletFinder', \
+        'ComplexUpset', \
+        'cowplot', \
         'DelayedArray', \
         'DelayedMatrixStats', \
         'DESeq2', \
@@ -32,25 +23,41 @@ RUN Rscript -e "\
         'GenomicFeatures', \
         'GenomicRanges', \
         'ggbio', \
+        'ggrepel', \
         'glmGamPoi', \
+        'hdf5r', \
+        'Hmisc', \
+        'immunogenomics/presto', \
         'IRanges', \
+        'kableExtra', \
         'limma', \
+        'locfit', \
         'MAST', \
         'Matrix', \
         'Matrix.utils', \
+        'metap', \
         'motifmatchr', \
         'multtest', \
+        'patchwork', \
+        'pcadMethods', \
+        'plotly', \
+        'RCurl', \
+        'reticulate', \
         'Rsamtools', \
         'S4Vectors', \
+        'satijalab/seurat@914c0f180bf919898ba573eb28bbeb259aa94cbc', \
+        'scran', \
         'SingleCellExperiment', \
-        'SummarizedExperiment'));" && \
+        'Signac', \
+        'SingleR', \
+        'SoupX', \
+        'SummarizedExperiment', \
+        'tidyverse', \
+        'ZJUFanLab/scCATCH'));" && \
     rm -fr /tmp/Rtmp*
 
 # Pull specific commit to main that includes support for SpaceRangerV4
 # https://github.com/satijalab/seurat/commit/914c0f180bf919898ba573eb28bbeb259aa94cbc
-RUN Rscript -e "\
-        library(devtools); \
-        devtools::install_github('satijalab/seurat', ref='914c0f180bf919898ba573eb28bbeb259aa94cbc');"
 
 RUN wget -P /tmp https://repo.anaconda.com/miniconda/Miniconda3-py311_23.10.0-1-Linux-x86_64.sh && \
     sha256sum /tmp/Miniconda3-py311_23.10.0-1-Linux-x86_64.sh && \
@@ -73,45 +80,12 @@ RUN pip install scanpy loompy scvelo macs2 && \
 
 RUN apt-get install -y libboost-all-dev && \
     Rscript -e "\
-        BiocManager::install('pcaMethods'); \
         library(devtools); \
         install_github('velocyto-team/velocyto.R');"
 
 RUN Rscript -e "\
         library(devtools); \
         devtools::install_github('cole-trapnell-lab/monocle3');"
-
-RUN Rscript -e "\
-        library(devtools); \
-        install_github('ZJUFanLab/scCATCH');"
-
-RUN Rscript -e "\
-    BiocManager::install(c(\
-        'celda')); \
-    install.packages(c(\
-        'SoupX'));"
-
-RUN Rscript -e "\
-        library(devtools); \
-        install_github('bnprks/BPCells/r'); \
-        install_github('immunogenomics/presto');"
-
-RUN Rscript -e "\
-    install.packages('arrow');"
-
-RUN Rscript -e "\
-    BiocManager::install(c(\
-        'SingleR', \
-        'celldex', \
-        'scran', \
-        'RCurl' \
-    ));" && \
-    rm -fr /tmp/Rtmp*
-
-
-RUN Rscript -e "\
-    library(devtools); \
-    install_github('chris-mcginnis-ucsf/DoubletFinder', force = TRUE);"
 
 RUN mkdir /opt/virtualenvs/ && \
     export WORKON_HOME=/opt/virtualenvs ; Rscript -e "\
