@@ -12,6 +12,7 @@ RUN Rscript -e "\
         'celda', \
         'celldex', \
         'chris-mcginnis-ucsf/DoubletFinder', \
+        'cole-trapnell-lab/monocle3', \
         'ComplexUpset', \
         'cowplot', \
         'DelayedArray', \
@@ -23,14 +24,17 @@ RUN Rscript -e "\
         'GenomicFeatures', \
         'GenomicRanges', \
         'ggbio', \
+        'ggrastr', \
         'ggrepel', \
         'glmGamPoi', \
         'hdf5r', \
         'Hmisc', \
+        'HDF5Array', \
         'immunogenomics/presto', \
         'IRanges', \
         'kableExtra', \
         'limma', \
+        'lme4', \
         'locfit', \
         'MAST', \
         'Matrix', \
@@ -39,7 +43,7 @@ RUN Rscript -e "\
         'motifmatchr', \
         'multtest', \
         'patchwork', \
-        'pcadMethods', \
+        'pcaMethods', \
         'plotly', \
         'RCurl', \
         'reticulate', \
@@ -53,6 +57,7 @@ RUN Rscript -e "\
         'SoupX', \
         'SummarizedExperiment', \
         'tidyverse', \
+        'velocyto-team/velocyto.R', \
         'ZJUFanLab/scCATCH'));" && \
     rm -fr /tmp/Rtmp*
 
@@ -77,15 +82,6 @@ RUN apt-get update && \
 
 RUN pip install scanpy loompy scvelo macs2 && \
     pip cache purge
-
-RUN apt-get install -y libboost-all-dev && \
-    Rscript -e "\
-        library(devtools); \
-        install_github('velocyto-team/velocyto.R');"
-
-RUN Rscript -e "\
-        library(devtools); \
-        devtools::install_github('cole-trapnell-lab/monocle3');"
 
 RUN mkdir /opt/virtualenvs/ && \
     export WORKON_HOME=/opt/virtualenvs ; Rscript -e "\
