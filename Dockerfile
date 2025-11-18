@@ -73,6 +73,8 @@ RUN Rscript -e "\
         'S4Vectors', \
         'satijalab/seurat@914c0f180bf919898ba573eb28bbeb259aa94cbc', \
         'scran', \
+        'SeuratData', \
+        'SeuratWrappers', \
         'SingleCellExperiment', \
         'Signac', \
         'SingleR', \
