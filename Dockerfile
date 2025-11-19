@@ -39,6 +39,7 @@ RUN Rscript -e "\
         'cole-trapnell-lab/monocle3', \
         'ComplexUpset', \
         'cowplot', \
+        'decontX', \
         'DelayedArray', \
         'DelayedMatrixStats', \
         'DESeq2', \
