@@ -25,11 +25,14 @@ RUN Rscript -e "\
     BiocManager::install(c(\
         'AnnotationDbi', \
         'AnnotationFilter', \
+        'annotatr', \
         'arrow', \
         'batchelor', \
         'BiocGenerics', \
         'bnprks/BPCells/r', \
         'bookdown', \
+        'BSgenome.Hsapiens.UCSC.hg38', \
+        'BSgenome.Mmusculus.UCSC.mm10', \
         'celda', \
         'celldex', \
         'chris-mcginnis-ucsf/DoubletFinder', \
@@ -54,6 +57,7 @@ RUN Rscript -e "\
         'HDF5Array', \
         'immunogenomics/presto', \
         'IRanges', \
+        'JASPAR2020', \
         'kableExtra', \
         'limma', \
         'lme4', \
@@ -80,6 +84,7 @@ RUN Rscript -e "\
         'SingleR', \
         'SoupX', \
         'SummarizedExperiment', \
+        'TFBSTools', \
         'tidyverse', \
         'velocyto-team/velocyto.R', \
         'ZJUFanLab/scCATCH'));" && \
